@@ -5,6 +5,13 @@
 
 :root {
   /* ============================================
+   GLOBAL TEXT COLORS - For Strong Contrast
+   ============================================ */
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;
+  --text-muted: #6b7280;
+
+  /* ============================================
      BONDZE OFFICIAL BRAND COLORS
      From Corporate Card System
      ============================================ */
@@ -59,10 +66,10 @@
   --color-bg-dark: var(--bondze-blue);
 
   /* Text Colors */
-  --color-text-primary: var(--bondze-blue);
+  --color-text-primary: var(--bondze-charcoal);
   --color-text-secondary: var(--bondze-charcoal);
   --color-text-light: var(--bondze-white);
-  --color-text-muted: #6b6b7b;
+  --color-text-muted: #ececf3;
 
   /* Border Colors */
   --color-border: var(--bondze-light-dark);

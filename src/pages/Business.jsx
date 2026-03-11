@@ -54,7 +54,7 @@ const Business = () => {
                 style={{
                   fontSize: "1.125rem",
                   lineHeight: "1.8",
-                  color: "var(--color-text-secondary)",
+                  color: "var(--text-muted)",
                   marginBottom: "1.5rem",
                 }}
               >
@@ -68,7 +68,7 @@ const Business = () => {
                 </h4>
                 <p
                   style={{
-                    color: "var(--color-text-secondary)",
+                    color: "var(--text-muted)",
                     lineHeight: "1.6",
                     margin: 0,
                   }}
@@ -85,7 +85,7 @@ const Business = () => {
                 </h4>
                 <p
                   style={{
-                    color: "var(--color-text-secondary)",
+                    color: "var(--text-muted)",
                     lineHeight: "1.6",
                     margin: 0,
                   }}
@@ -101,7 +101,7 @@ const Business = () => {
                 </h4>
                 <p
                   style={{
-                    color: "var(--color-text-secondary)",
+                    color: "var(--text-muted)",
                     lineHeight: "1.6",
                     margin: 0,
                   }}
@@ -137,7 +137,7 @@ const Business = () => {
               <p
                 style={{
                   lineHeight: "1.7",
-                  color: "var(--color-gray-light)",
+                  color: "var(--text-light)",
                   marginBottom: "1.5rem",
                 }}
               >
@@ -147,7 +147,7 @@ const Business = () => {
               <ul
                 style={{
                   textAlign: "left",
-                  color: "var(--color-gray-light)",
+                  color: "var(--text-light)",
                   paddingLeft: "1.5rem",
                 }}
               >
@@ -246,7 +246,7 @@ const Business = () => {
                 style={{
                   fontSize: "1.125rem",
                   lineHeight: "1.8",
-                  color: "var(--color-text-secondary)",
+                  color: "var(--text-muted)",
                   marginBottom: "1.5rem",
                 }}
               >
@@ -260,7 +260,7 @@ const Business = () => {
                 </h4>
                 <p
                   style={{
-                    color: "var(--color-text-secondary)",
+                    color: "var(--text-muted)",
                     lineHeight: "1.6",
                     margin: 0,
                   }}
@@ -276,7 +276,7 @@ const Business = () => {
                 </h4>
                 <p
                   style={{
-                    color: "var(--color-text-secondary)",
+                    color: "var(--text-muted)",
                     lineHeight: "1.6",
                     margin: 0,
                   }}
@@ -292,7 +292,7 @@ const Business = () => {
                 </h4>
                 <p
                   style={{
-                    color: "var(--color-text-secondary)",
+                    color: "var(--text-muted)",
                     lineHeight: "1.6",
                     margin: 0,
                   }}
@@ -344,7 +344,7 @@ const Business = () => {
                 style={{
                   fontSize: "1.125rem",
                   lineHeight: "1.8",
-                  color: "var(--color-text-secondary)",
+                  color: "var(--text-muted)",
                   marginBottom: "1.5rem",
                 }}
               >
@@ -358,7 +358,7 @@ const Business = () => {
                 </h4>
                 <p
                   style={{
-                    color: "var(--color-text-secondary)",
+                    color: "var(--text-muted)",
                     lineHeight: "1.6",
                     margin: 0,
                   }}
@@ -374,7 +374,7 @@ const Business = () => {
                 </h4>
                 <p
                   style={{
-                    color: "var(--color-text-secondary)",
+                    color: "var(--text-muted)",
                     lineHeight: "1.6",
                     margin: 0,
                   }}
@@ -389,7 +389,7 @@ const Business = () => {
                 </h4>
                 <p
                   style={{
-                    color: "var(--color-text-secondary)",
+                    color: "var(--text-muted)",
                     lineHeight: "1.6",
                     margin: 0,
                   }}
@@ -425,7 +425,7 @@ const Business = () => {
               <p
                 style={{
                   lineHeight: "1.7",
-                  color: "var(--color-gray-light)",
+                  color: "var(--text-light)",
                   marginBottom: "1.5rem",
                 }}
               >
@@ -436,7 +436,7 @@ const Business = () => {
               <ul
                 style={{
                   textAlign: "left",
-                  color: "var(--color-gray-light)",
+                  color: "var(--text-light)",
                   paddingLeft: "1.5rem",
                 }}
               >
@@ -465,7 +465,7 @@ const Business = () => {
               </h4>
               <p
                 style={{
-                  color: "var(--color-text-secondary)",
+                  color: "var(--text-muted)",
                   lineHeight: "1.6",
                   marginBottom: "1rem",
                 }}
@@ -476,7 +476,7 @@ const Business = () => {
               <ul
                 style={{
                   paddingLeft: "1.5rem",
-                  color: "var(--color-text-secondary)",
+                  color: "var(--text-muted)",
                   fontSize: "0.875rem",
                 }}
               >
@@ -491,7 +491,7 @@ const Business = () => {
               </h4>
               <p
                 style={{
-                  color: "var(--color-text-secondary)",
+                  color: "var(--text-muted)",
                   lineHeight: "1.6",
                   marginBottom: "1rem",
                 }}
@@ -502,7 +502,7 @@ const Business = () => {
               <ul
                 style={{
                   paddingLeft: "1.5rem",
-                  color: "var(--color-text-secondary)",
+                  color: "var(--text-muted)",
                   fontSize: "0.875rem",
                 }}
               >
@@ -517,7 +517,7 @@ const Business = () => {
               </h4>
               <p
                 style={{
-                  color: "var(--color-text-secondary)",
+                  color: "var(--text-muted)",
                   lineHeight: "1.6",
                   marginBottom: "1rem",
                 }}
@@ -528,7 +528,7 @@ const Business = () => {
               <ul
                 style={{
                   paddingLeft: "1.5rem",
-                  color: "var(--color-text-secondary)",
+                  color: "var(--text-muted)",
                   fontSize: "0.875rem",
                 }}
               >
@@ -545,14 +545,15 @@ const Business = () => {
               textAlign: "center",
               marginTop: "3rem",
               padding: "2rem",
-              backgroundColor: "var(--color-bg-primary)",
+              backgroundColor: "var(--text-dark)",
               borderRadius: "var(--radius-lg)",
               boxShadow: "var(--shadow-md)",
             }}
           >
             <p
               style={{
-                color: "var(--color-text-secondary)",
+                color: "var(--text-dark)",
+                color: "var(--text-muted)",
                 margin: 0,
                 fontStyle: "italic",
               }}
