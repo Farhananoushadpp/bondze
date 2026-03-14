@@ -50,8 +50,8 @@ const Navbar = () => {
           <img
             src="/logo.svg"
             alt="Bondze Precious Metals"
-            width="48"
-            height="48"
+            width="22"
+            height="22"
           />
         </NavLink>
 

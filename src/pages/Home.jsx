@@ -23,14 +23,16 @@ const Home = () => {
         <div
           className="hero-background"
           style={{
-            backgroundImage:
-              "linear-gradient(135deg, rgba(10, 22, 40, 0.95) 0%, rgba(26, 42, 74, 0.9) 100%)",
+            backgroundImage: `url('/home.jpg'),
+              // linear-gradient(135deg, rgba(10, 22, 40, 0.6) 0%, rgba(26, 42, 74, 0.5) 10%)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundBlendMode: "overlay",
           }}
         />
         <div className="hero-content">
           <h1 className="hero-title">
-            Building a disciplined precious metals and minerals platform
-            connecting Africa and global markets.
+            Connecting Africa's minerals to global markets
           </h1>
           <p className="hero-subtitle">
             BONDZE operates across mining development and precious metals

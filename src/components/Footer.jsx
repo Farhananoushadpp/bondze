@@ -1,26 +1,26 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { path: '/about', label: 'About' },
-    { path: '/business', label: 'Our Business' },
-    { path: '/geography', label: 'Geography' },
-    { path: '/contact', label: 'Contact' },
+    { path: "/about", label: "About" },
+    { path: "/business", label: "Our Business" },
+    { path: "/geography", label: "Geography" },
+    { path: "/contact", label: "Contact" },
   ];
 
   const legalLinks = [
-    { path: '/legal', label: 'Legal Disclaimer' },
-    { path: '/legal', label: 'Privacy Policy' },
-    { path: '/legal', label: 'Terms of Use' },
+    { path: "/legal", label: "Legal Disclaimer" },
+    { path: "/legal", label: "Privacy Policy" },
+    { path: "/legal", label: "Terms of Use" },
   ];
 
   const governanceLinks = [
-    { path: '/governance', label: 'Governance' },
-    { path: '/partnerships', label: 'Partnerships' },
-    { path: '/investors', label: 'Investors' },
-    { path: '/careers', label: 'Careers' },
+    { path: "/governance", label: "Governance" },
+    { path: "/partnerships", label: "Partnerships" },
+    { path: "/investors", label: "Investors" },
+    { path: "/careers", label: "Careers" },
   ];
 
   return (
@@ -29,17 +29,17 @@ const Footer = () => {
         <div className="footer-grid">
           <div>
             <NavLink to="/" className="footer-brand">
-              <img 
-                src="/logo.svg" 
-                alt="Bondze Precious Metals" 
-                width="48"
-                height="48"
+              <img
+                src="/logo.svg"
+                alt="Bondze Precious Metals"
+                width="32"
+                height="32"
               />
             </NavLink>
             <p className="footer-description">
-              BONDZE Precious Metals and Mineral Trading LLC operates across mining development 
-              and precious metals trading with institutional discipline, connecting Africa 
-              and global markets.
+              BONDZE Precious Metals and Mineral Trading LLC operates across
+              mining development and precious metals trading with institutional
+              discipline, connecting Africa and global markets.
             </p>
           </div>
 
@@ -79,7 +79,8 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © {currentYear} BONDZE PRECIOUS METALS AND MINERAL TRADING LLC. All Rights Reserved.
+            © {currentYear} BONDZE PRECIOUS METALS AND MINERAL TRADING LLC. All
+            Rights Reserved.
           </p>
         </div>
       </div>
