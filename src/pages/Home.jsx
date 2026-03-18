@@ -21,10 +21,11 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-background">
-          <video autoPlay muted loop playsInline className="hero-video">
-            <source src="/homebanner.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <img
+            src="/homebanner.png"
+            alt="BONDZE Precious Metals"
+            className="hero-image"
+          />
         </div>
         <div className="hero-content">
           <h1 className="hero-title">
