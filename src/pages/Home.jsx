@@ -3,17 +3,74 @@ import {
   ArrowRight,
   Gem,
   Mountain,
-  Globe2,
   ShieldCheck,
   TrendingUp,
+  Award,
+  Users,
+  Clock,
+  BarChart3,
 } from "lucide-react";
 import SectionTitle from "../components/SectionTitle";
 
 const Home = () => {
+  // Market data for reference prices
   const marketData = [
     { metal: "Gold", price: "2,045.30", change: "+1.2%", unit: "USD/oz" },
     { metal: "Copper", price: "8,450.00", change: "-0.4%", unit: "USD/tonne" },
     { metal: "Silver", price: "23.85", change: "+0.8%", unit: "USD/oz" },
+  ];
+
+  // Competitive advantages
+  const advantages = [
+    {
+      icon: <Award size={32} />,
+      title: "Institutional Excellence",
+      description:
+        "Bank-grade processes and compliance frameworks that meet global standards.",
+    },
+    {
+      icon: <Users size={32} />,
+      title: "Local Partnerships",
+      description:
+        "Deep relationships with African mining communities and stakeholders.",
+    },
+    {
+      icon: <Clock size={32} />,
+      title: "Market Agility",
+      description:
+        "Rapid response to market opportunities with flexible trading strategies.",
+    },
+    {
+      icon: <BarChart3 size={32} />,
+      title: "Risk Management",
+      description:
+        "Comprehensive risk assessment and mitigation across all operations.",
+    },
+  ];
+
+  // Latest insights and news
+  const newsInsights = [
+    {
+      title: "Gold Market Outlook Q1 2024",
+      excerpt:
+        "Analysis of gold price trends and market dynamics affecting African mining operations.",
+      date: "March 2024",
+      category: "Market Analysis",
+    },
+    {
+      title: "New Partnership in West Africa",
+      excerpt:
+        "BONDZE announces strategic partnership with leading gold mining operation in Ghana.",
+      date: "February 2024",
+      category: "Company News",
+    },
+    {
+      title: "Responsible Sourcing Certification",
+      excerpt:
+        "Achievement of international responsible sourcing standards for all trading operations.",
+      date: "January 2024",
+      category: "Compliance",
+    },
   ];
 
   return (
@@ -365,6 +422,153 @@ const Home = () => {
             * Market data for reference only. Not for trading purposes. Actual
             prices may vary.
           </p>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="section section-light">
+        <div className="container">
+          <SectionTitle
+            title="Why Choose BONDZE"
+            subtitle="Our competitive advantages deliver superior value to partners and stakeholders"
+          />
+          <div className="grid grid-2" style={{ gap: "2rem" }}>
+            {advantages.map((advantage, index) => (
+              <div key={index} className="card" style={{ padding: "2rem" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: "1.5rem",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "64px",
+                      height: "64px",
+                      backgroundColor: "var(--color-gold)",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "var(--text-light)",
+                      flexShrink: 0,
+                    }}
+                  >
+                    {advantage.icon}
+                  </div>
+                  <div>
+                    <h3
+                      style={{
+                        fontSize: "1.25rem",
+                        fontWeight: "600",
+                        marginBottom: "0.75rem",
+                        color: "var(--text-dark)",
+                      }}
+                    >
+                      {advantage.title}
+                    </h3>
+                    <p
+                      style={{
+                        color: "var(--text-muted)",
+                        lineHeight: "1.6",
+                        margin: 0,
+                      }}
+                    >
+                      {advantage.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div style={{ textAlign: "center", marginTop: "3rem" }}>
+            <NavLink to="/about" className="btn btn-primary btn-lg">
+              Learn More About Us{" "}
+              <ArrowRight size={18} style={{ marginLeft: "8px" }} />
+            </NavLink>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Insights Section */}
+      <section className="section">
+        <div className="container">
+          <SectionTitle
+            title="Latest Insights"
+            subtitle="Market analysis, company updates, and industry developments"
+          />
+          <div className="grid grid-3" style={{ gap: "2rem" }}>
+            {newsInsights.map((insight, index) => (
+              <article key={index} className="card">
+                <div style={{ padding: "2rem" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      marginBottom: "1rem",
+                    }}
+                  >
+                    <span
+                      style={{
+                        backgroundColor: "var(--color-gold)",
+                        color: "var(--text-light)",
+                        padding: "0.25rem 0.75rem",
+                        borderRadius: "var(--radius-full)",
+                        fontSize: "0.75rem",
+                        fontWeight: "600",
+                      }}
+                    >
+                      {insight.category}
+                    </span>
+                    <span
+                      style={{
+                        fontSize: "0.875rem",
+                        color: "var(--text-muted)",
+                      }}
+                    >
+                      {insight.date}
+                    </span>
+                  </div>
+                  <h3
+                    style={{
+                      fontSize: "1.125rem",
+                      fontWeight: "600",
+                      marginBottom: "0.75rem",
+                      color: "var(--text-dark)",
+                      lineHeight: "1.4",
+                    }}
+                  >
+                    {insight.title}
+                  </h3>
+                  <p
+                    style={{
+                      color: "var(--text-muted)",
+                      lineHeight: "1.6",
+                      marginBottom: "1.5rem",
+                    }}
+                  >
+                    {insight.excerpt}
+                  </p>
+                  <button
+                    className="btn btn-outline"
+                    style={{ width: "100%" }}
+                    onClick={() => console.log("Read more:", insight.title)}
+                  >
+                    Read More{" "}
+                    <ArrowRight size={16} style={{ marginLeft: "8px" }} />
+                  </button>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div style={{ textAlign: "center", marginTop: "3rem" }}>
+            <NavLink to="/investors" className="btn btn-secondary">
+              View All Insights{" "}
+              <ArrowRight size={18} style={{ marginLeft: "8px" }} />
+            </NavLink>
+          </div>
         </div>
       </section>
     </main>

@@ -1,7 +1,87 @@
 import SectionTitle from "../components/SectionTitle";
-import { Target, Compass, Lightbulb, Globe, Building2 } from "lucide-react";
+import {
+  Target,
+  Compass,
+  Lightbulb,
+  Globe,
+  Building2,
+  Users,
+  Award,
+  Calendar,
+} from "lucide-react";
 
 const About = () => {
+  // Leadership team data
+  const leadershipTeam = [
+    {
+      name: "Michael Chen",
+      position: "Chief Executive Officer",
+      expertise:
+        "Precious metals trading with 15+ years experience in international commodities markets",
+      image: "/team-ceo.jpg",
+    },
+    {
+      name: "Sarah Johnson",
+      position: "Chief Operating Officer",
+      expertise:
+        "Mining operations and strategic partnerships across African markets",
+      image: "/team-coo.jpg",
+    },
+    {
+      name: "David Williams",
+      position: "Chief Compliance Officer",
+      expertise:
+        "Regulatory compliance and AML/CFT frameworks for precious metals trading",
+      image: "/team-cco.jpg",
+    },
+    {
+      name: "Amina Hassan",
+      position: "Head of Business Development",
+      expertise:
+        "Strategic growth and partnership development in emerging markets",
+      image: "/team-bd.jpg",
+    },
+  ];
+
+  // Company milestones
+  const milestones = [
+    {
+      year: "2020",
+      title: "Company Founded",
+      description:
+        "BONDZE established in Dubai DMCC with focus on African precious metals",
+      icon: <Building2 size={24} />,
+    },
+    {
+      year: "2021",
+      title: "First Trading Operations",
+      description:
+        "Commenced gold doré trading from West African mining partners",
+      icon: <Target size={24} />,
+    },
+    {
+      year: "2022",
+      title: "Strategic Expansion",
+      description:
+        "Expanded operations to Central Africa and established copper trading vertical",
+      icon: <Globe size={24} />,
+    },
+    {
+      year: "2023",
+      title: "Institutional Recognition",
+      description:
+        "Achieved key compliance certifications and institutional partnerships",
+      icon: <Award size={24} />,
+    },
+    {
+      year: "2024",
+      title: "Platform Growth",
+      description:
+        "Scaled trading volumes and expanded mining development partnerships",
+      icon: <Calendar size={24} />,
+    },
+  ];
+
   return (
     <main>
       {/* Page Header */}
@@ -464,6 +544,170 @@ const About = () => {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Team Section */}
+      <section className="section">
+        <div className="container">
+          <SectionTitle
+            title="Leadership Team"
+            subtitle="Experienced professionals guiding our strategic vision and operational excellence"
+          />
+          <div className="grid grid-2" style={{ gap: "3rem" }}>
+            {leadershipTeam.map((member, index) => (
+              <div
+                key={index}
+                className="card"
+                style={{ padding: "0", overflow: "hidden" }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    md: { flexDirection: "row" },
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "200px",
+                      backgroundColor: "var(--bondze-light)",
+                      backgroundImage: `url(${member.image})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      position: "relative",
+                    }}
+                  >
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "1rem",
+                        right: "1rem",
+                        width: "48px",
+                        height: "48px",
+                        backgroundColor: "var(--bondze-gold)",
+                        borderRadius: "50%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "var(--bondze-white)",
+                      }}
+                    >
+                      <Users size={24} />
+                    </div>
+                  </div>
+                  <div style={{ padding: "2rem" }}>
+                    <h3
+                      style={{
+                        fontSize: "1.25rem",
+                        fontWeight: "600",
+                        marginBottom: "0.5rem",
+                        color: "var(--bondze-charcoal)",
+                      }}
+                    >
+                      {member.name}
+                    </h3>
+                    <p
+                      style={{
+                        color: "var(--bondze-gold)",
+                        fontWeight: "500",
+                        marginBottom: "1rem",
+                      }}
+                    >
+                      {member.position}
+                    </p>
+                    <p
+                      style={{
+                        color: "var(--text-muted)",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      {member.expertise}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Company Milestones Section */}
+      <section className="section section-dark">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title text-light">Company Milestones</h2>
+            <div className="divider-gold"></div>
+            <p
+              className="section-description"
+              style={{ color: "var(--text-light)" }}
+            >
+              Our journey of growth and achievement in the precious metals
+              sector
+            </p>
+          </div>
+          <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
+            <div className="grid grid-3" style={{ gap: "2rem" }}>
+              {milestones.map((milestone, index) => (
+                <div
+                  key={index}
+                  className="card"
+                  style={{
+                    padding: "2rem",
+                    textAlign: "center",
+                    backgroundColor: "var(--bondze-charcoal)",
+                    border: "1px solid var(--bondze-gold)",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "64px",
+                      height: "64px",
+                      backgroundColor: "var(--bondze-gold)",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      margin: "0 auto 1.5rem",
+                      color: "var(--bondze-white)",
+                    }}
+                  >
+                    {milestone.icon}
+                  </div>
+                  <div
+                    style={{
+                      fontSize: "1.25rem",
+                      fontWeight: "700",
+                      color: "var(--bondze-gold)",
+                      marginBottom: "0.75rem",
+                    }}
+                  >
+                    {milestone.year}
+                  </div>
+                  <h3
+                    style={{
+                      fontSize: "1.125rem",
+                      fontWeight: "600",
+                      marginBottom: "1rem",
+                      color: "var(--text-light)",
+                    }}
+                  >
+                    {milestone.title}
+                  </h3>
+                  <p
+                    style={{
+                      color: "var(--text-muted)",
+                      lineHeight: "1.6",
+                      fontSize: "0.95rem",
+                    }}
+                  >
+                    {milestone.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
