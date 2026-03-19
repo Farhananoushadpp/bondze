@@ -552,7 +552,6 @@ const Business = () => {
           >
             <p
               style={{
-                color: "var(--text-dark)",
                 color: "var(--text-muted)",
                 margin: 0,
                 fontStyle: "italic",
