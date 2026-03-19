@@ -13,7 +13,7 @@ import {
 import SectionTitle from "../components/SectionTitle";
 
 const Home = () => {
-  // Market data for reference prices
+  // Market data for reference prices - Updated for Vercel deployment
   const marketData = [
     { metal: "Gold", price: "2,045.30", change: "+1.2%", unit: "USD/oz" },
     { metal: "Copper", price: "8,450.00", change: "-0.4%", unit: "USD/tonne" },
