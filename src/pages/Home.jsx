@@ -78,10 +78,13 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-background">
-          <img
-            src="/homebanner.png"
-            alt="BONDZE Precious Metals"
-            className="hero-image"
+          <video
+            src="/homebanner.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="hero-video"
           />
         </div>
         <div className="hero-content">
