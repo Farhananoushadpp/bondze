@@ -5,7 +5,12 @@ const Partnerships = () => {
   return (
     <main>
       {/* Page Header */}
-      <section className="page-header">
+      <section
+        className="page-header"
+        style={{
+          backgroundImage: 'url("/images/image-10.webp")',
+        }}
+      >
         <div className="container">
           <h1 className="page-header-title">Partnerships</h1>
           <p className="page-header-subtitle">

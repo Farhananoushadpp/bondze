@@ -6,7 +6,12 @@ const Geography = () => {
   return (
     <main>
       {/* Page Header */}
-      <section className="page-header">
+      <section
+        className="page-header"
+        style={{
+          backgroundImage: 'url("/images/image-13.webp")',
+        }}
+      >
         <div className="container">
           <h1 className="page-header-title">Geographic Footprint</h1>
           <p className="page-header-subtitle">
@@ -230,6 +235,807 @@ const Geography = () => {
                   </li>
                   <li>Corporate governance</li>
                 </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Geographic Coverage */}
+      <section className="section section-dark">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title text-light">Geographic Coverage</h2>
+            <div className="divider-gold"></div>
+          </div>
+
+          {/* Geographic Coverage Visual Layout */}
+          <div
+            style={{
+              maxWidth: "1400px",
+              margin: "0 auto",
+              position: "relative",
+            }}
+          >
+            {/* Primary Regions - 3 Column Layout */}
+            <div style={{ marginBottom: "3rem" }}>
+              <h3
+                style={{
+                  textAlign: "center",
+                  fontSize: "1.5rem",
+                  fontWeight: "700",
+                  color: "var(--bondze-gold)",
+                  marginBottom: "2.5rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                }}
+              >
+                Primary Operations
+              </h3>
+
+              <div className="grid grid-3" style={{ gap: "2.5rem" }}>
+                {/* West Africa */}
+                <div
+                  className="card"
+                  style={{
+                    backgroundColor: "var(--bondze-white)",
+                    border: "2px solid var(--bondze-gold)",
+                    padding: "2.5rem",
+                    textAlign: "center",
+                    transition: "all 0.3s ease",
+                    position: "relative",
+                    overflow: "hidden",
+                  }}
+                >
+                  {/* Top Border Accent */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "0",
+                      left: "0",
+                      right: "0",
+                      height: "4px",
+                      background:
+                        "linear-gradient(90deg, var(--bondze-gold), var(--bondze-gold-light))",
+                    }}
+                  ></div>
+
+                  {/* Icon */}
+                  <div
+                    style={{
+                      width: "80px",
+                      height: "80px",
+                      background:
+                        "linear-gradient(135deg, var(--bondze-blue), var(--bondze-blue-light))",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      margin: "0 auto 2rem",
+                      color: "var(--bondze-white)",
+                    }}
+                  >
+                    <MapPin size={40} />
+                  </div>
+
+                  <h3
+                    style={{
+                      fontSize: "1.5rem",
+                      fontWeight: "700",
+                      color: "var(--bondze-charcoal)",
+                      marginBottom: "1.5rem",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.5px",
+                    }}
+                  >
+                    West Africa
+                  </h3>
+
+                  <div
+                    style={{
+                      textAlign: "left",
+                      color: "var(--text-muted)",
+                      lineHeight: "1.8",
+                    }}
+                  >
+                    <div
+                      style={{
+                        marginBottom: "1rem",
+                        padding: "0.75rem",
+                        backgroundColor: "var(--bondze-light)",
+                        borderRadius: "var(--radius-md)",
+                        borderLeft: "3px solid var(--bondze-gold)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--bondze-gold)",
+                          marginRight: "0.5rem",
+                        }}
+                      >
+                        ◆
+                      </span>
+                      <strong style={{ color: "var(--bondze-charcoal)" }}>
+                        Primary Focus:
+                      </strong>{" "}
+                      Gold mining operations
+                    </div>
+                    <div
+                      style={{
+                        marginBottom: "1rem",
+                        padding: "0.75rem",
+                        backgroundColor: "var(--bondze-light)",
+                        borderRadius: "var(--radius-md)",
+                        borderLeft: "3px solid var(--bondze-gold)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--bondze-gold)",
+                          marginRight: "0.5rem",
+                        }}
+                      >
+                        ◆
+                      </span>
+                      <strong style={{ color: "var(--bondze-charcoal)" }}>
+                        Key Regions:
+                      </strong>{" "}
+                      Ghana, Mali, Burkina Faso
+                    </div>
+                    <div
+                      style={{
+                        marginBottom: "1rem",
+                        padding: "0.75rem",
+                        backgroundColor: "var(--bondze-light)",
+                        borderRadius: "var(--radius-md)",
+                        borderLeft: "3px solid var(--bondze-gold)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--bondze-gold)",
+                          marginRight: "0.5rem",
+                        }}
+                      >
+                        ◆
+                      </span>
+                      <strong style={{ color: "var(--bondze-charcoal)" }}>
+                        Activities:
+                      </strong>{" "}
+                      Mine development, doré sourcing
+                    </div>
+                    <div
+                      style={{
+                        padding: "0.75rem",
+                        backgroundColor: "var(--bondze-light)",
+                        borderRadius: "var(--radius-md)",
+                        borderLeft: "3px solid var(--bondze-gold)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--bondze-gold)",
+                          marginRight: "0.5rem",
+                        }}
+                      >
+                        ◆
+                      </span>
+                      <strong style={{ color: "var(--bondze-charcoal)" }}>
+                        Advantage:
+                      </strong>{" "}
+                      Established mining infrastructure
+                    </div>
+                  </div>
+                </div>
+
+                {/* Central Africa */}
+                <div
+                  className="card"
+                  style={{
+                    backgroundColor: "var(--bondze-white)",
+                    border: "2px solid var(--bondze-gold)",
+                    padding: "2.5rem",
+                    textAlign: "center",
+                    transition: "all 0.3s ease",
+                    position: "relative",
+                    overflow: "hidden",
+                  }}
+                >
+                  {/* Top Border Accent */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "0",
+                      left: "0",
+                      right: "0",
+                      height: "4px",
+                      background:
+                        "linear-gradient(90deg, var(--bondze-gold), var(--bondze-gold-light))",
+                    }}
+                  ></div>
+
+                  {/* Icon */}
+                  <div
+                    style={{
+                      width: "80px",
+                      height: "80px",
+                      background:
+                        "linear-gradient(135deg, var(--bondze-blue), var(--bondze-blue-light))",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      margin: "0 auto 2rem",
+                      color: "var(--bondze-white)",
+                    }}
+                  >
+                    <Factory size={40} />
+                  </div>
+
+                  <h3
+                    style={{
+                      fontSize: "1.5rem",
+                      fontWeight: "700",
+                      color: "var(--bondze-charcoal)",
+                      marginBottom: "1.5rem",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.5px",
+                    }}
+                  >
+                    Central Africa
+                  </h3>
+
+                  <div
+                    style={{
+                      textAlign: "left",
+                      color: "var(--text-muted)",
+                      lineHeight: "1.8",
+                    }}
+                  >
+                    <div
+                      style={{
+                        marginBottom: "1rem",
+                        padding: "0.75rem",
+                        backgroundColor: "var(--bondze-light)",
+                        borderRadius: "var(--radius-md)",
+                        borderLeft: "3px solid var(--bondze-gold)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--bondze-gold)",
+                          marginRight: "0.5rem",
+                        }}
+                      >
+                        ◆
+                      </span>
+                      <strong style={{ color: "var(--bondze-charcoal)" }}>
+                        Primary Focus:
+                      </strong>{" "}
+                      Copper and gold operations
+                    </div>
+                    <div
+                      style={{
+                        marginBottom: "1rem",
+                        padding: "0.75rem",
+                        backgroundColor: "var(--bondze-light)",
+                        borderRadius: "var(--radius-md)",
+                        borderLeft: "3px solid var(--bondze-gold)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--bondze-gold)",
+                          marginRight: "0.5rem",
+                        }}
+                      >
+                        ◆
+                      </span>
+                      <strong style={{ color: "var(--bondze-charcoal)" }}>
+                        Key Regions:
+                      </strong>{" "}
+                      DRC, Zambia, Congo
+                    </div>
+                    <div
+                      style={{
+                        marginBottom: "1rem",
+                        padding: "0.75rem",
+                        backgroundColor: "var(--bondze-light)",
+                        borderRadius: "var(--radius-md)",
+                        borderLeft: "3px solid var(--bondze-gold)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--bondze-gold)",
+                          marginRight: "0.5rem",
+                        }}
+                      >
+                        ◆
+                      </span>
+                      <strong style={{ color: "var(--bondze-charcoal)" }}>
+                        Activities:
+                      </strong>{" "}
+                      Copper trading, processing
+                    </div>
+                    <div
+                      style={{
+                        padding: "0.75rem",
+                        backgroundColor: "var(--bondze-light)",
+                        borderRadius: "var(--radius-md)",
+                        borderLeft: "3px solid var(--bondze-gold)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--bondze-gold)",
+                          marginRight: "0.5rem",
+                        }}
+                      >
+                        ◆
+                      </span>
+                      <strong style={{ color: "var(--bondze-charcoal)" }}>
+                        Advantage:
+                      </strong>{" "}
+                      Rich mineral deposits
+                    </div>
+                  </div>
+                </div>
+
+                {/* Middle East Hub */}
+                <div
+                  className="card"
+                  style={{
+                    backgroundColor: "var(--bondze-white)",
+                    border: "2px solid var(--bondze-gold)",
+                    padding: "2.5rem",
+                    textAlign: "center",
+                    transition: "all 0.3s ease",
+                    position: "relative",
+                    overflow: "hidden",
+                  }}
+                >
+                  {/* Top Border Accent */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "0",
+                      left: "0",
+                      right: "0",
+                      height: "4px",
+                      background:
+                        "linear-gradient(90deg, var(--bondze-gold), var(--bondze-gold-light))",
+                    }}
+                  ></div>
+
+                  {/* Icon */}
+                  <div
+                    style={{
+                      width: "80px",
+                      height: "80px",
+                      background:
+                        "linear-gradient(135deg, var(--bondze-blue), var(--bondze-blue-light))",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      margin: "0 auto 2rem",
+                      color: "var(--bondze-white)",
+                    }}
+                  >
+                    <Building size={40} />
+                  </div>
+
+                  <h3
+                    style={{
+                      fontSize: "1.5rem",
+                      fontWeight: "700",
+                      color: "var(--bondze-charcoal)",
+                      marginBottom: "1.5rem",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.5px",
+                    }}
+                  >
+                    Middle East Hub
+                  </h3>
+
+                  <div
+                    style={{
+                      textAlign: "left",
+                      color: "var(--text-muted)",
+                      lineHeight: "1.8",
+                    }}
+                  >
+                    <div
+                      style={{
+                        marginBottom: "1rem",
+                        padding: "0.75rem",
+                        backgroundColor: "var(--bondze-light)",
+                        borderRadius: "var(--radius-md)",
+                        borderLeft: "3px solid var(--bondze-gold)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--bondze-gold)",
+                          marginRight: "0.5rem",
+                        }}
+                      >
+                        ◆
+                      </span>
+                      <strong style={{ color: "var(--bondze-charcoal)" }}>
+                        Primary Focus:
+                      </strong>{" "}
+                      Global trading operations
+                    </div>
+                    <div
+                      style={{
+                        marginBottom: "1rem",
+                        padding: "0.75rem",
+                        backgroundColor: "var(--bondze-light)",
+                        borderRadius: "var(--radius-md)",
+                        borderLeft: "3px solid var(--bondze-gold)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--bondze-gold)",
+                          marginRight: "0.5rem",
+                        }}
+                      >
+                        ◆
+                      </span>
+                      <strong style={{ color: "var(--bondze-charcoal)" }}>
+                        Location:
+                      </strong>{" "}
+                      Dubai DMCC
+                    </div>
+                    <div
+                      style={{
+                        marginBottom: "1rem",
+                        padding: "0.75rem",
+                        backgroundColor: "var(--bondze-light)",
+                        borderRadius: "var(--radius-md)",
+                        borderLeft: "3px solid var(--bondze-gold)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--bondze-gold)",
+                          marginRight: "0.5rem",
+                        }}
+                      >
+                        ◆
+                      </span>
+                      <strong style={{ color: "var(--bondze-charcoal)" }}>
+                        Activities:
+                      </strong>{" "}
+                      Trading, logistics, finance
+                    </div>
+                    <div
+                      style={{
+                        padding: "0.75rem",
+                        backgroundColor: "var(--bondze-light)",
+                        borderRadius: "var(--radius-md)",
+                        borderLeft: "3px solid var(--bondze-gold)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--bondze-gold)",
+                          marginRight: "0.5rem",
+                        }}
+                      >
+                        ◆
+                      </span>
+                      <strong style={{ color: "var(--bondze-charcoal)" }}>
+                        Advantage:
+                      </strong>{" "}
+                      Strategic global hub
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Secondary Regions - 2 Column Layout */}
+            <div>
+              <h3
+                style={{
+                  textAlign: "center",
+                  fontSize: "1.5rem",
+                  fontWeight: "700",
+                  color: "var(--bondze-gold)",
+                  marginBottom: "2.5rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                }}
+              >
+                Expansion & Global Reach
+              </h3>
+
+              <div className="grid grid-2" style={{ gap: "2.5rem" }}>
+                {/* East Africa */}
+                <div
+                  className="card"
+                  style={{
+                    backgroundColor: "var(--bondze-white)",
+                    border: "2px solid var(--bondze-gold)",
+                    padding: "2.5rem",
+                    textAlign: "center",
+                    transition: "all 0.3s ease",
+                    position: "relative",
+                    overflow: "hidden",
+                  }}
+                >
+                  {/* Top Border Accent */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "0",
+                      left: "0",
+                      right: "0",
+                      height: "4px",
+                      background:
+                        "linear-gradient(90deg, var(--bondze-gold), var(--bondze-gold-light))",
+                    }}
+                  ></div>
+
+                  {/* Icon */}
+                  <div
+                    style={{
+                      width: "80px",
+                      height: "80px",
+                      background:
+                        "linear-gradient(135deg, var(--bondze-blue), var(--bondze-blue-light))",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      margin: "0 auto 2rem",
+                      color: "var(--bondze-white)",
+                    }}
+                  >
+                    <MapPin size={40} />
+                  </div>
+
+                  <h3
+                    style={{
+                      fontSize: "1.5rem",
+                      fontWeight: "700",
+                      color: "var(--bondze-charcoal)",
+                      marginBottom: "1.5rem",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.5px",
+                    }}
+                  >
+                    East Africa
+                  </h3>
+
+                  <div
+                    style={{
+                      textAlign: "left",
+                      color: "var(--text-muted)",
+                      lineHeight: "1.8",
+                    }}
+                  >
+                    <div
+                      style={{
+                        marginBottom: "1rem",
+                        padding: "0.75rem",
+                        backgroundColor: "var(--bondze-light)",
+                        borderRadius: "var(--radius-md)",
+                        borderLeft: "3px solid var(--bondze-gold)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--bondze-gold)",
+                          marginRight: "0.5rem",
+                        }}
+                      >
+                        ◆
+                      </span>
+                      <strong style={{ color: "var(--bondze-charcoal)" }}>
+                        Primary Focus:
+                      </strong>{" "}
+                      Exploration and development
+                    </div>
+                    <div
+                      style={{
+                        marginBottom: "1rem",
+                        padding: "0.75rem",
+                        backgroundColor: "var(--bondze-light)",
+                        borderRadius: "var(--radius-md)",
+                        borderLeft: "3px solid var(--bondze-gold)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--bondze-gold)",
+                          marginRight: "0.5rem",
+                        }}
+                      >
+                        ◆
+                      </span>
+                      <strong style={{ color: "var(--bondze-charcoal)" }}>
+                        Key Regions:
+                      </strong>{" "}
+                      Tanzania, Kenya, Ethiopia
+                    </div>
+                    <div
+                      style={{
+                        padding: "0.75rem",
+                        backgroundColor: "var(--bondze-light)",
+                        borderRadius: "var(--radius-md)",
+                        borderLeft: "3px solid var(--bondze-gold)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--bondze-gold)",
+                          marginRight: "0.5rem",
+                        }}
+                      >
+                        ◆
+                      </span>
+                      <strong style={{ color: "var(--bondze-charcoal)" }}>
+                        Status:
+                      </strong>{" "}
+                      Emerging opportunities
+                    </div>
+                  </div>
+                </div>
+
+                {/* Global Markets */}
+                <div
+                  className="card"
+                  style={{
+                    backgroundColor: "var(--bondze-white)",
+                    border: "2px solid var(--bondze-gold)",
+                    padding: "2.5rem",
+                    textAlign: "center",
+                    transition: "all 0.3s ease",
+                    position: "relative",
+                    overflow: "hidden",
+                  }}
+                >
+                  {/* Top Border Accent */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "0",
+                      left: "0",
+                      right: "0",
+                      height: "4px",
+                      background:
+                        "linear-gradient(90deg, var(--bondze-gold), var(--bondze-gold-light))",
+                    }}
+                  ></div>
+
+                  {/* Icon */}
+                  <div
+                    style={{
+                      width: "80px",
+                      height: "80px",
+                      background:
+                        "linear-gradient(135deg, var(--bondze-blue), var(--bondze-blue-light))",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      margin: "0 auto 2rem",
+                      color: "var(--bondze-white)",
+                    }}
+                  >
+                    <Building size={40} />
+                  </div>
+
+                  <h3
+                    style={{
+                      fontSize: "1.5rem",
+                      fontWeight: "700",
+                      color: "var(--bondze-charcoal)",
+                      marginBottom: "1.5rem",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.5px",
+                    }}
+                  >
+                    Global Markets
+                  </h3>
+
+                  <div
+                    style={{
+                      textAlign: "left",
+                      color: "var(--text-muted)",
+                      lineHeight: "1.8",
+                    }}
+                  >
+                    <div
+                      style={{
+                        marginBottom: "1rem",
+                        padding: "0.75rem",
+                        backgroundColor: "var(--bondze-light)",
+                        borderRadius: "var(--radius-md)",
+                        borderLeft: "3px solid var(--bondze-gold)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--bondze-gold)",
+                          marginRight: "0.5rem",
+                        }}
+                      >
+                        ◆
+                      </span>
+                      <strong style={{ color: "var(--bondze-charcoal)" }}>
+                        Trading Partners:
+                      </strong>{" "}
+                      Asia, Europe, Americas
+                    </div>
+                    <div
+                      style={{
+                        marginBottom: "1rem",
+                        padding: "0.75rem",
+                        backgroundColor: "var(--bondze-light)",
+                        borderRadius: "var(--radius-md)",
+                        borderLeft: "3px solid var(--bondze-gold)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--bondze-gold)",
+                          marginRight: "0.5rem",
+                        }}
+                      >
+                        ◆
+                      </span>
+                      <strong style={{ color: "var(--bondze-charcoal)" }}>
+                        Refinery Network:
+                      </strong>{" "}
+                      LBMA-approved facilities
+                    </div>
+                    <div
+                      style={{
+                        padding: "0.75rem",
+                        backgroundColor: "var(--bondze-light)",
+                        borderRadius: "var(--radius-md)",
+                        borderLeft: "3px solid var(--bondze-gold)",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--bondze-gold)",
+                          marginRight: "0.5rem",
+                        }}
+                      >
+                        ◆
+                      </span>
+                      <strong style={{ color: "var(--bondze-charcoal)" }}>
+                        Market Access:
+                      </strong>{" "}
+                      Through Dubai hub
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

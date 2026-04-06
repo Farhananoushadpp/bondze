@@ -35,8 +35,10 @@ const Navbar = () => {
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
     { path: "/business", label: "Our Business" },
+    // { path: "/projects", label: "Projects" },
     { path: "/geography", label: "Geography" },
     { path: "/governance", label: "Governance" },
+    { path: "/esg", label: "ESG" },
     { path: "/partnerships", label: "Partnerships" },
     { path: "/investors", label: "Investors" },
     { path: "/careers", label: "Careers" },
@@ -70,7 +72,6 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-
         <button
           className="navbar-toggle"
           onClick={() => setIsMobileMenuOpen(true)}
@@ -81,7 +82,6 @@ const Navbar = () => {
           <Menu size={24} />
         </button>
       </nav>
-
       <div
         className={`navbar-mobile-backdrop ${isMobileMenuOpen ? "open" : ""}`}
         onClick={() => setIsMobileMenuOpen(false)}
@@ -116,7 +116,6 @@ const Navbar = () => {
             <X size={24} />
           </button>
         </div>
-
         <ul className="navbar-mobile-nav">
           {navLinks.map((link) => (
             <li key={link.path}>

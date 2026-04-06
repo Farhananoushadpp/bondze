@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
 import {
   ArrowRight,
+  Download,
   Gem,
   Mountain,
   ShieldCheck,
@@ -20,6 +22,18 @@ const Home = () => {
     { metal: "Silver", price: "23.85", change: "+0.8%", unit: "USD/oz" },
   ];
 
+  // Video carousel state
+  const [currentVideo, setCurrentVideo] = useState(0);
+
+  const videos = ["/homebanner.mp4", "/homebanner2.mp4", "/homebanner3.mp4"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentVideo((prev) => (prev + 1) % videos.length);
+    }, 5000); // Change video every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [videos.length]);
   // Competitive advantages
   const advantages = [
     {
@@ -72,25 +86,84 @@ const Home = () => {
       category: "Compliance",
     },
   ];
-
   return (
     <main>
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-background">
           <video
-            src="/homebanner.mp4"
+            key={currentVideo}
+            src={videos[currentVideo]}
             autoPlay
             loop
             muted
             playsInline
             className="hero-video"
           />
+
+          {/* Video Indicators */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: "20px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              display: "flex",
+              gap: "10px",
+              zIndex: "10",
+            }}
+          >
+            {videos.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentVideo(index)}
+                style={{
+                  width: "12px",
+                  height: "12px",
+                  borderRadius: "50%",
+                  border: "2px solid rgba(255, 255, 255, 0.5)",
+                  backgroundColor:
+                    currentVideo === index
+                      ? "rgba(255, 255, 255, 0.8)"
+                      : "transparent",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                }}
+                aria-label={`Go to video ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
         <div className="hero-content">
-          <h1 className="hero-title">
-            Connecting Africa's minerals to global markets
-          </h1>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginBottom: "2rem",
+            }}
+          >
+            <img
+              src="/logo1.svg"
+              alt="BONDZE Logo"
+              style={{
+                width: "180px",
+                height: "auto",
+                maxWidth: "100%",
+              }}
+            />
+          </div>
+          <img
+            src="/title.svg"
+            alt="Connecting Africa's minerals to global markets"
+            className="hero-title"
+            style={{
+              width: "100% !important",
+              maxWidth: "1000px !important",
+              height: "auto !important",
+              minWidth: "600px !important",
+            }}
+          />
           <p className="hero-subtitle">
             BONDZE operates across mining development and precious metals
             trading with institutional discipline.
@@ -103,10 +176,23 @@ const Home = () => {
             <NavLink to="/contact" className="btn btn-outline-light btn-lg">
               Contact
             </NavLink>
+            <a
+              href="/BONDZE.pdf"
+              download="BONDZE-Company-Profile.pdf"
+              className="btn btn-outline-light btn-lg"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                textDecoration: "none",
+              }}
+            >
+              <Download size={18} />
+              Download Profile
+            </a>
           </div>
         </div>
       </section>
-
       {/* Who We Are Section */}
       <section className="section section-light">
         <div className="container">
@@ -148,7 +234,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* What We Do Section */}
       <section className="section">
         <div className="container">
@@ -242,16 +327,176 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Geographic Focus Section */}
+      {/* Executive Search Section */}
       <section className="section section-dark">
         <div className="container">
-          <div className="section-header">
-            <h2 className="section-title text-light">Geographic Focus</h2>
-            <div className="divider-gold"></div>
-            <p
-              className="section-description"
-              style={{ color: "var(--text-light)" }}
+          <SectionTitle
+            title="Executive Search"
+            subtitle="Building leadership teams with expertise in precious metals and mining sectors"
+          />
+
+          <div
+            className="card"
+            style={{
+              backgroundColor: "var(--bondze-white)",
+              border: "2px solid var(--bondze-gold)",
+              padding: "3rem",
+              marginTop: "3rem",
+            }}
+          >
+            <div
+              className="grid grid-2"
+              style={{ gap: "3rem", alignItems: "center" }}
             >
+              {/* Left - Image */}
+              <div>
+                <div
+                  style={{
+                    borderRadius: "var(--radius-lg)",
+                    overflow: "hidden",
+                    border: "2px solid var(--bondze-gold)",
+                  }}
+                >
+                  <img
+                    src="/executive.jpg"
+                    alt="Executive Summary"
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                    }}
+                  />
+                </div>
+              </div>
+
+              {/* Right - Content */}
+              <div>
+                <h3
+                  style={{
+                    fontSize: "1.75rem",
+                    fontWeight: "700",
+                    color: "var(--bondze-charcoal)",
+                    marginBottom: "2rem",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  Company Overview
+                </h3>
+
+                <div
+                  style={{
+                    backgroundColor: "var(--bondze-light)",
+                    borderLeft: "4px solid var(--bondze-gold)",
+                    padding: "1.5rem",
+                    marginBottom: "1.5rem",
+                    borderRadius: "0 8px 8px 0",
+                  }}
+                >
+                  <p
+                    style={{
+                      color: "var(--text-muted)",
+                      lineHeight: "1.8",
+                      margin: 0,
+                    }}
+                  >
+                    <strong style={{ color: "var(--bondze-charcoal)" }}>
+                      BONDZE PRECIOUS METALS AND MINERALS FZ-LLC
+                    </strong>{" "}
+                    is a UAE based mining and commodities company focused on
+                    building a scalable platform across Africa's most
+                    resource-rich regions.
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    backgroundColor: "var(--bondze-light)",
+                    borderLeft: "4px solid var(--bondze-gold)",
+                    padding: "1.5rem",
+                    marginBottom: "1.5rem",
+                    borderRadius: "0 8px 8px 0",
+                  }}
+                >
+                  <p
+                    style={{
+                      color: "var(--text-muted)",
+                      lineHeight: "1.8",
+                      margin: 0,
+                    }}
+                  >
+                    The Company's core strategy is to acquire, develop, and
+                    operate gold mining assets while integrating downstream
+                    trading through Dubai.
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    backgroundColor: "var(--bondze-light)",
+                    borderLeft: "4px solid var(--bondze-gold)",
+                    padding: "1.5rem",
+                    marginBottom: "1.5rem",
+                    borderRadius: "0 8px 8px 0",
+                  }}
+                >
+                  <p
+                    style={{
+                      color: "var(--text-muted)",
+                      lineHeight: "1.8",
+                      margin: 0,
+                    }}
+                  >
+                    BONDZE operates with a disciplined, community-first entry
+                    approach securing early-stage access to mining opportunities
+                    and transitioning them into structured, licensed operations.
+                    The Company is currently advancing its gold project in
+                    Sierra Leone while building a broader pipeline across West
+                    and Central Africa.
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    backgroundColor: "var(--bondze-light)",
+                    borderLeft: "4px solid var(--bondze-gold)",
+                    padding: "1.5rem",
+                    borderRadius: "0 8px 8px 0",
+                  }}
+                >
+                  <p
+                    style={{
+                      color: "var(--text-muted)",
+                      lineHeight: "1.8",
+                      margin: 0,
+                    }}
+                  >
+                    BONDZE's long-term vision is to evolve into a diversified
+                    mining and commodities group with exposure to gold, copper,
+                    and bauxite, supported by integrated trading and processing
+                    capabilities.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ textAlign: "center", marginTop: "3rem" }}>
+            <NavLink to="/careers" className="btn btn-primary btn-lg">
+              Explore Opportunities{" "}
+              <ArrowRight size={18} style={{ marginLeft: "8px" }} />
+            </NavLink>
+          </div>
+        </div>
+      </section>
+
+      {/* Geographic Focus Section */}
+      <section className="section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Geographic Focus</h2>
+            <div className="divider-gold"></div>
+            <p className="section-description">
               Strategic operations connecting African mining regions to global
               markets
             </p>
@@ -271,9 +516,7 @@ const Home = () => {
               >
                 Africa
               </div>
-              <p style={{ color: "var(--text-light)" }}>
-                West and Central African mining operations
-              </p>
+              <p>West and Central African mining operations</p>
             </div>
             <div style={{ textAlign: "center", padding: "2rem" }}>
               <div
@@ -286,9 +529,7 @@ const Home = () => {
               >
                 Dubai
               </div>
-              <p style={{ color: "var(--text-light)" }}>
-                Global headquarters and trading hub
-              </p>
+              <p>Global headquarters and trading hub</p>
             </div>
           </div>
           <div style={{ textAlign: "center", marginTop: "3rem" }}>
@@ -493,7 +734,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* Latest Insights Section */}
       <section className="section">
         <div className="container">

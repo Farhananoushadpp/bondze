@@ -16,6 +16,8 @@ import Investors from "./pages/Investors";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import Legal from "./pages/Legal";
+import Projects from "./pages/Projects";
+import ESG from "./pages/ESG";
 
 import "./styles/variables.css";
 import "./styles/global.css";
@@ -39,6 +41,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/business" element={<Business />} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="/geography" element={<Geography />} />
             <Route path="/governance" element={<Governance />} />
             <Route path="/partnerships" element={<Partnerships />} />
@@ -46,6 +49,7 @@ function App() {
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/legal" element={<Legal />} />
+            <Route path="/esg" element={<ESG />} />
           </Routes>
         </div>
         <Footer />

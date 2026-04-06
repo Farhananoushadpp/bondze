@@ -8,38 +8,49 @@ import {
   Users,
   Award,
   Calendar,
+  TrendingUp,
+  Shield,
 } from "lucide-react";
 
 const About = () => {
   // Leadership team data
   const leadershipTeam = [
     {
-      name: "Michael Chen",
-      position: "Chief Executive Officer",
-      expertise:
-        "Precious metals trading with 15+ years experience in international commodities markets",
-      image: "/team-ceo.jpg",
+      name: "NGALIM LOUIS NZDE",
+      position: "CEO/CHAIRMAN OF THE BOARD OF DIRECTORS",
+      image: "/images/image-29.webp",
     },
     {
-      name: "Sarah Johnson",
-      position: "Chief Operating Officer",
-      expertise:
-        "Mining operations and strategic partnerships across African markets",
-      image: "/team-coo.jpg",
+      name: "PRAKASAN KAPPANAKKAL",
+      position: "Middle East & Asia Market Advisor",
+      image: "/images/image-30.webp",
     },
     {
-      name: "David Williams",
-      position: "Chief Compliance Officer",
-      expertise:
-        "Regulatory compliance and AML/CFT frameworks for precious metals trading",
-      image: "/team-cco.jpg",
+      name: "KITTY ZHOU HAIOU",
+      position:
+        "Vice Chairlady, Director Of International Relations and Global Logistics Advisor",
+      image: "/images/image-31.webp",
     },
     {
-      name: "Amina Hassan",
-      position: "Head of Business Development",
-      expertise:
-        "Strategic growth and partnership development in emerging markets",
-      image: "/team-bd.jpg",
+      name: "ADAMO NJIENE NKUMBO",
+      position:
+        "African Business PRO Advisor and Middle East Market Development",
+      image: "/images/image-32.webp",
+    },
+    {
+      name: "Hon WIDJILOWU MARTIN",
+      position: "Group Strategic Advisor",
+      image: "/images/image-33.webp",
+    },
+    {
+      name: "EDDY N. FRU",
+      position: "Group Financial Advisor WALL STREET/Dallas USA",
+      image: "/images/image-34.webp",
+    },
+    {
+      name: "SHAKIR KHA",
+      position: "Market Advisor",
+      image: "/images/image-35.webp",
     },
   ];
 
@@ -85,7 +96,12 @@ const About = () => {
   return (
     <main>
       {/* Page Header */}
-      <section className="page-header">
+      <section
+        className="page-header"
+        style={{
+          backgroundImage: 'url("/images/image-01.webp")',
+        }}
+      >
         <div className="container">
           <h1 className="page-header-title">About BPMM</h1>
           <p className="page-header-subtitle">
@@ -135,8 +151,183 @@ const About = () => {
               </p>
             </div>
             <div className="company-overview-image">
-              <img src="/overview.jpg" alt="Company Overview" />
+              <img src="/overvew.jpg" alt="Company Overview" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Team Section */}
+      <section className="section">
+        <div className="container">
+          <SectionTitle
+            title="Leadership Team"
+            subtitle="Experienced professionals guiding our strategic vision and operational excellence"
+          />
+          <div style={{ marginBottom: "3rem" }}>
+            {/* CEO Card - Full Width First Row */}
+            <div
+              className="card ceo-highlight"
+              style={{
+                padding: "0",
+                overflow: "hidden",
+                border: "2px solid var(--bondze-gold)",
+                boxShadow: "0 8px 32px rgba(212, 175, 55, 0.2)",
+                transform: "scale(1.02)",
+                transition: "all 0.3s ease",
+                maxWidth: "280px",
+                margin: "0 auto",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <div
+                  style={{
+                    width: "100%",
+                    height: "180px",
+                    backgroundColor: "var(--bondze-light)",
+                    backgroundImage: `url(${leadershipTeam[0].image})`,
+                    backgroundSize: "contain",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    position: "relative",
+                    overflow: "hidden",
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "1rem",
+                      right: "1rem",
+                      width: "48px",
+                      height: "48px",
+                      backgroundColor: "var(--bondze-gold)",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "var(--bondze-white)",
+                    }}
+                  >
+                    <Users size={24} />
+                  </div>
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "1rem",
+                      left: "1rem",
+                      backgroundColor: "var(--bondze-gold)",
+                      color: "var(--bondze-white)",
+                      padding: "0.25rem 0.75rem",
+                      borderRadius: "var(--radius-sm)",
+                      fontSize: "0.75rem",
+                      fontWeight: "600",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    CEO
+                  </div>
+                </div>
+                <div style={{ padding: "2rem" }}>
+                  <h3
+                    style={{
+                      fontSize: "1.25rem",
+                      fontWeight: "600",
+                      marginBottom: "0.5rem",
+                      color: "var(--bondze-charcoal)",
+                      textAlign: "center",
+                    }}
+                  >
+                    {leadershipTeam[0].name}
+                  </h3>
+                  <p
+                    style={{
+                      color: "var(--bondze-gold)",
+                      fontWeight: "500",
+                      marginBottom: "1rem",
+                      textAlign: "center",
+                    }}
+                  >
+                    {leadershipTeam[0].position}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Other Team Members - Grid Layout */}
+          <div className="grid grid-4" style={{ gap: "1.5rem" }}>
+            {leadershipTeam.slice(1).map((member, index) => (
+              <div
+                key={index}
+                className="card"
+                style={{ padding: "0", overflow: "hidden" }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "180px",
+                      backgroundColor: "var(--bondze-light)",
+                      backgroundImage: `url(${member.image})`,
+                      backgroundSize: "contain",
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                      position: "relative",
+                      overflow: "hidden",
+                    }}
+                  >
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "1rem",
+                        right: "1rem",
+                        width: "48px",
+                        height: "48px",
+                        backgroundColor: "var(--bondze-gold)",
+                        borderRadius: "50%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "var(--bondze-white)",
+                      }}
+                    >
+                      <Users size={24} />
+                    </div>
+                  </div>
+                  <div style={{ padding: "2rem" }}>
+                    <h3
+                      style={{
+                        fontSize: "1.25rem",
+                        fontWeight: "600",
+                        marginBottom: "0.5rem",
+                        color: "var(--bondze-charcoal)",
+                      }}
+                    >
+                      {member.name}
+                    </h3>
+                    <p
+                      style={{
+                        color: "var(--bondze-gold)",
+                        fontWeight: "500",
+                        marginBottom: "1rem",
+                      }}
+                    >
+                      {member.position}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -146,9 +337,12 @@ const About = () => {
         <div className="container">
           <SectionTitle
             title="Our Mission"
-            subtitle="To build a disciplined precious metals platform that connects African mining operations with global markets through responsible sourcing, institutional governance, and long-term value creation."
+            subtitle="To identify and develop high-potential mineral assets,operate efficiently and responsibly.Creating sustainable value for Investors,Partners and Host Communities."
           />
-          <div className="card-grid card-grid-3" style={{ marginTop: "3rem" }}>
+          <div
+            className="grid grid-2"
+            style={{ gap: "2rem", marginTop: "3rem" }}
+          >
             <div
               className="card"
               style={{ textAlign: "center", padding: "2.5rem" }}
@@ -193,33 +387,6 @@ const About = () => {
                   color: "var(--bondze-white)",
                 }}
               >
-                <Globe size={28} />
-              </div>
-              <h3 style={{ fontSize: "1.25rem", marginBottom: "1rem" }}>
-                Connection
-              </h3>
-              <p style={{ color: "var(--text-muted)", lineHeight: "1.6" }}>
-                Bridging African mining operations with global markets through
-                reliable trading infrastructure.
-              </p>
-            </div>
-            <div
-              className="card"
-              style={{ textAlign: "center", padding: "2.5rem" }}
-            >
-              <div
-                style={{
-                  width: "64px",
-                  height: "64px",
-                  backgroundColor: "var(--bondze-gold)",
-                  borderRadius: "var(--radius-lg)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 1.5rem",
-                  color: "var(--bondze-white)",
-                }}
-              >
                 <Lightbulb size={28} />
               </div>
               <h3 style={{ fontSize: "1.25rem", marginBottom: "1rem" }}>
@@ -234,15 +401,295 @@ const About = () => {
         </div>
       </section>
 
+      {/* Core Values Section */}
+      <section className="section section-dark">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title text-light">Core Values</h2>
+            <div className="divider-gold"></div>
+          </div>
+          <div
+            className="grid grid-3"
+            style={{ gap: "1.5rem", maxWidth: "1200px", margin: "0 auto" }}
+          >
+            <div
+              className="card"
+              style={{
+                backgroundColor: "var(--bondze-charcoal)",
+                border: "1px solid var(--bondze-gold)",
+                padding: "1.5rem",
+                textAlign: "center",
+              }}
+            >
+              <div
+                style={{
+                  width: "48px",
+                  height: "48px",
+                  backgroundColor: "var(--bondze-gold)",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  margin: "0 auto 1rem",
+                  color: "var(--bondze-white)",
+                }}
+              >
+                <Target size={24} />
+              </div>
+              <h3
+                style={{
+                  fontSize: "1.125rem",
+                  fontWeight: "600",
+                  color: "var(--bondze-gold)",
+                  marginBottom: "0.75rem",
+                }}
+              >
+                Integrity
+              </h3>
+              <p
+                style={{
+                  color: "var(--text-light)",
+                  lineHeight: "1.5",
+                  fontSize: "0.95rem",
+                }}
+              >
+                Transparent and ethical operations in all business activities.
+              </p>
+            </div>
+            <div
+              className="card"
+              style={{
+                backgroundColor: "var(--bondze-charcoal)",
+                border: "1px solid var(--bondze-gold)",
+                padding: "1.5rem",
+                textAlign: "center",
+              }}
+            >
+              <div
+                style={{
+                  width: "48px",
+                  height: "48px",
+                  backgroundColor: "var(--bondze-gold)",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  margin: "0 auto 1rem",
+                  color: "var(--bondze-white)",
+                }}
+              >
+                <Award size={24} />
+              </div>
+              <h3
+                style={{
+                  fontSize: "1.125rem",
+                  fontWeight: "600",
+                  color: "var(--bondze-gold)",
+                  marginBottom: "0.75rem",
+                }}
+              >
+                Discipline
+              </h3>
+              <p
+                style={{
+                  color: "var(--text-light)",
+                  lineHeight: "1.5",
+                  fontSize: "0.95rem",
+                }}
+              >
+                Structured execution and financial prudence in decision-making.
+              </p>
+            </div>
+            <div
+              className="card"
+              style={{
+                backgroundColor: "var(--bondze-charcoal)",
+                border: "1px solid var(--bondze-gold)",
+                padding: "1.5rem",
+                textAlign: "center",
+              }}
+            >
+              <div
+                style={{
+                  width: "48px",
+                  height: "48px",
+                  backgroundColor: "var(--bondze-gold)",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  margin: "0 auto 1rem",
+                  color: "var(--bondze-white)",
+                }}
+              >
+                <Globe size={24} />
+              </div>
+              <h3
+                style={{
+                  fontSize: "1.125rem",
+                  fontWeight: "600",
+                  color: "var(--bondze-gold)",
+                  marginBottom: "0.75rem",
+                }}
+              >
+                Sustainability
+              </h3>
+              <p
+                style={{
+                  color: "var(--text-light)",
+                  lineHeight: "1.5",
+                  fontSize: "0.95rem",
+                }}
+              >
+                Responsible environmental and social practices.
+              </p>
+            </div>
+            <div
+              className="card"
+              style={{
+                backgroundColor: "var(--bondze-charcoal)",
+                border: "1px solid var(--bondze-gold)",
+                padding: "1.5rem",
+                textAlign: "center",
+              }}
+            >
+              <div
+                style={{
+                  width: "48px",
+                  height: "48px",
+                  backgroundColor: "var(--bondze-gold)",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  margin: "0 auto 1rem",
+                  color: "var(--bondze-white)",
+                }}
+              >
+                <Lightbulb size={24} />
+              </div>
+              <h3
+                style={{
+                  fontSize: "1.125rem",
+                  fontWeight: "600",
+                  color: "var(--bondze-gold)",
+                  marginBottom: "0.75rem",
+                }}
+              >
+                Long-Term Value
+              </h3>
+              <p
+                style={{
+                  color: "var(--text-light)",
+                  lineHeight: "1.5",
+                  fontSize: "0.95rem",
+                }}
+              >
+                Building enduring assets and relationships for sustainable
+                growth.
+              </p>
+            </div>
+            <div
+              className="card"
+              style={{
+                backgroundColor: "var(--bondze-charcoal)",
+                border: "1px solid var(--bondze-gold)",
+                padding: "1.5rem",
+                textAlign: "center",
+              }}
+            >
+              <div
+                style={{
+                  width: "48px",
+                  height: "48px",
+                  backgroundColor: "var(--bondze-gold)",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  margin: "0 auto 1rem",
+                  color: "var(--bondze-white)",
+                }}
+              >
+                <Shield size={24} />
+              </div>
+              <h3
+                style={{
+                  fontSize: "1.125rem",
+                  fontWeight: "600",
+                  color: "var(--bondze-gold)",
+                  marginBottom: "0.75rem",
+                }}
+              >
+                Responsibility
+              </h3>
+              <p
+                style={{
+                  color: "var(--text-light)",
+                  lineHeight: "1.5",
+                  fontSize: "0.95rem",
+                }}
+              >
+                Accountability and commitment to ethical business practices.
+              </p>
+            </div>
+            <div
+              className="card"
+              style={{
+                backgroundColor: "var(--bondze-charcoal)",
+                border: "1px solid var(--bondze-gold)",
+                padding: "1.5rem",
+                textAlign: "center",
+              }}
+            >
+              <div
+                style={{
+                  width: "48px",
+                  height: "48px",
+                  backgroundColor: "var(--bondze-gold)",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  margin: "0 auto 1rem",
+                  color: "var(--bondze-white)",
+                }}
+              >
+                <TrendingUp size={24} />
+              </div>
+              <h3
+                style={{
+                  fontSize: "1.125rem",
+                  fontWeight: "600",
+                  color: "var(--bondze-gold)",
+                  marginBottom: "0.75rem",
+                }}
+              >
+                Excellence
+              </h3>
+              <p
+                style={{
+                  color: "var(--text-light)",
+                  lineHeight: "1.5",
+                  fontSize: "0.95rem",
+                }}
+              >
+                Pursuit of highest standards in all operational aspects.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Long-term Vision */}
       <section className="section">
         <div className="container">
           <SectionTitle
             title="Long-term Vision"
-            subtitle="Building a lasting institutional platform for precious metals"
+            subtitle="To become a leading African-focused mining and commodities group,delivering long-term value through responsible resource development and strategic global trading."
           />
           <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-            <p
+            {/* <p
               style={{
                 fontSize: "1.25rem",
                 lineHeight: "1.8",
@@ -254,7 +701,7 @@ const About = () => {
               precious metals, recognized for our integrity, operational
               excellence, and sustainable impact on the communities and markets
               we serve.
-            </p>
+            </p> */}
             <div className="grid grid-2">
               <div className="card card-gold-accent">
                 <h4 style={{ fontSize: "1.25rem", marginBottom: "1rem" }}>
@@ -295,6 +742,375 @@ const About = () => {
                   international refiners, trading houses, and institutional
                   investors.
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Strategic Focus */}
+      <section className="section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Strategic Focus</h2>
+            <div className="divider-gold"></div>
+          </div>
+
+          {/* Strategic Focus Visual Header */}
+          <div
+            style={{
+              textAlign: "center",
+              marginBottom: "4rem",
+              position: "relative",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "2rem",
+                marginBottom: "2rem",
+                flexWrap: "wrap",
+              }}
+            >
+              <div
+                style={{
+                  width: "200px",
+                  height: "140px",
+                  overflow: "hidden",
+                  borderRadius: "var(--radius-lg)",
+                  boxShadow: "var(--shadow-lg)",
+                  border: "2px solid var(--bondze-gold)",
+                  transform: "rotate(-2deg)",
+                  transition: "transform 0.3s ease",
+                }}
+              >
+                <img
+                  src="/images/image-07.webp"
+                  alt="Strategic Focus 1"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+              <div
+                style={{
+                  width: "200px",
+                  height: "140px",
+                  overflow: "hidden",
+                  borderRadius: "var(--radius-lg)",
+                  boxShadow: "var(--shadow-lg)",
+                  border: "2px solid var(--bondze-gold)",
+                  transform: "rotate(2deg)",
+                  transition: "transform 0.3s ease",
+                }}
+              >
+                <img
+                  src="/images/image-08.webp"
+                  alt="Strategic Focus 2"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+            </div>
+            <p
+              style={{
+                fontSize: "1.125rem",
+                color: "var(--text-muted)",
+                maxWidth: "600px",
+                margin: "0 auto",
+                fontStyle: "italic",
+              }}
+            >
+              Our three-phase strategic approach drives sustainable growth and
+              market leadership
+            </p>
+          </div>
+
+          {/* Strategic Phases Timeline */}
+          <div
+            style={{
+              position: "relative",
+              maxWidth: "1200px",
+              margin: "0 auto",
+            }}
+          >
+            {/* Timeline Line */}
+            <div
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "0",
+                right: "0",
+                height: "2px",
+                background:
+                  "linear-gradient(90deg, var(--bondze-gold), var(--bondze-gold-light))",
+                zIndex: "1",
+              }}
+            ></div>
+
+            <div
+              className="grid grid-3"
+              style={{ gap: "2rem", position: "relative", zIndex: "2" }}
+            >
+              {/* Current Phase */}
+              <div
+                className="card"
+                style={{
+                  backgroundColor: "var(--bondze-white)",
+                  border: "2px solid var(--bondze-gold)",
+                  padding: "2rem",
+                  textAlign: "center",
+                  boxShadow: "0 10px 30px rgba(212, 175, 55, 0.15)",
+                  transition: "all 0.3s ease",
+                }}
+              >
+                <div
+                  style={{
+                    width: "80px",
+                    height: "80px",
+                    background:
+                      "linear-gradient(135deg, var(--bondze-gold), var(--bondze-gold-light))",
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    margin: "0 auto 1.5rem",
+                    color: "var(--bondze-white)",
+                    boxShadow: "0 5px 15px rgba(212, 175, 55, 0.3)",
+                    position: "relative",
+                  }}
+                >
+                  <Target size={36} />
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "-10px",
+                      right: "-10px",
+                      width: "30px",
+                      height: "30px",
+                      backgroundColor: "var(--bondze-gold)",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "0.75rem",
+                      fontWeight: "bold",
+                      color: "var(--bondze-white)",
+                      border: "3px solid var(--bondze-white)",
+                    }}
+                  >
+                    1
+                  </div>
+                </div>
+                <h3
+                  style={{
+                    fontSize: "1.5rem",
+                    fontWeight: "700",
+                    color: "var(--bondze-charcoal)",
+                    marginBottom: "1rem",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  CURRENT PHASE
+                </h3>
+                <div
+                  style={{
+                    textAlign: "left",
+                    color: "var(--text-muted)",
+                    lineHeight: "1.8",
+                    fontSize: "0.95rem",
+                  }}
+                >
+                  <p style={{ marginBottom: "1rem", fontWeight: "500" }}>
+                    <span style={{ color: "var(--bondze-gold)" }}>●</span>{" "}
+                    Mining Operations
+                  </p>
+                  <p style={{ marginBottom: "1rem", fontWeight: "500" }}>
+                    <span style={{ color: "var(--bondze-gold)" }}>●</span>{" "}
+                    Trading Infrastructure
+                  </p>
+                  <p style={{ fontWeight: "500" }}>
+                    <span style={{ color: "var(--bondze-gold)" }}>●</span>{" "}
+                    Partnership Development
+                  </p>
+                </div>
+              </div>
+
+              {/* Expansion Phase */}
+              <div
+                className="card"
+                style={{
+                  backgroundColor: "var(--bondze-white)",
+                  border: "2px solid var(--bondze-gold)",
+                  padding: "2rem",
+                  textAlign: "center",
+                  boxShadow: "0 10px 30px rgba(212, 175, 55, 0.15)",
+                  transition: "all 0.3s ease",
+                }}
+              >
+                <div
+                  style={{
+                    width: "80px",
+                    height: "80px",
+                    background:
+                      "linear-gradient(135deg, var(--bondze-gold), var(--bondze-gold-light))",
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    margin: "0 auto 1.5rem",
+                    color: "var(--bondze-white)",
+                    boxShadow: "0 5px 15px rgba(212, 175, 55, 0.3)",
+                    position: "relative",
+                  }}
+                >
+                  <TrendingUp size={36} />
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "-10px",
+                      right: "-10px",
+                      width: "30px",
+                      height: "30px",
+                      backgroundColor: "var(--bondze-gold)",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "0.75rem",
+                      fontWeight: "bold",
+                      color: "var(--bondze-white)",
+                      border: "3px solid var(--bondze-white)",
+                    }}
+                  >
+                    2
+                  </div>
+                </div>
+                <h3
+                  style={{
+                    fontSize: "1.5rem",
+                    fontWeight: "700",
+                    color: "var(--bondze-charcoal)",
+                    marginBottom: "1rem",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  EXPANSION PHASE
+                </h3>
+                <div
+                  style={{
+                    textAlign: "left",
+                    color: "var(--text-muted)",
+                    lineHeight: "1.8",
+                    fontSize: "0.95rem",
+                  }}
+                >
+                  <p style={{ marginBottom: "1rem", fontWeight: "500" }}>
+                    <span style={{ color: "var(--bondze-gold)" }}>●</span>{" "}
+                    Copper Operations
+                  </p>
+                  <p style={{ marginBottom: "1rem", fontWeight: "500" }}>
+                    <span style={{ color: "var(--bondze-gold)" }}>●</span>{" "}
+                    Processing Facilities
+                  </p>
+                  <p style={{ fontWeight: "500" }}>
+                    <span style={{ color: "var(--bondze-gold)" }}>●</span>{" "}
+                    Market Expansion
+                  </p>
+                </div>
+              </div>
+
+              {/* Diversification Phase */}
+              <div
+                className="card"
+                style={{
+                  backgroundColor: "var(--bondze-white)",
+                  border: "2px solid var(--bondze-gold)",
+                  padding: "2rem",
+                  textAlign: "center",
+                  boxShadow: "0 10px 30px rgba(212, 175, 55, 0.15)",
+                  transition: "all 0.3s ease",
+                }}
+              >
+                <div
+                  style={{
+                    width: "80px",
+                    height: "80px",
+                    background:
+                      "linear-gradient(135deg, var(--bondze-gold), var(--bondze-gold-light))",
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    margin: "0 auto 1.5rem",
+                    color: "var(--bondze-white)",
+                    boxShadow: "0 5px 15px rgba(212, 175, 55, 0.3)",
+                    position: "relative",
+                  }}
+                >
+                  <Globe size={36} />
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "-10px",
+                      right: "-10px",
+                      width: "30px",
+                      height: "30px",
+                      backgroundColor: "var(--bondze-gold)",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "0.75rem",
+                      fontWeight: "bold",
+                      color: "var(--bondze-white)",
+                      border: "3px solid var(--bondze-white)",
+                    }}
+                  >
+                    3
+                  </div>
+                </div>
+                <h3
+                  style={{
+                    fontSize: "1.5rem",
+                    fontWeight: "700",
+                    color: "var(--bondze-charcoal)",
+                    marginBottom: "1rem",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  DIVERSIFICATION PHASE
+                </h3>
+                <div
+                  style={{
+                    textAlign: "left",
+                    color: "var(--text-muted)",
+                    lineHeight: "1.8",
+                    fontSize: "0.95rem",
+                  }}
+                >
+                  <p style={{ marginBottom: "1rem", fontWeight: "500" }}>
+                    <span style={{ color: "var(--bondze-gold)" }}>●</span>{" "}
+                    Critical Minerals
+                  </p>
+                  <p style={{ marginBottom: "1rem", fontWeight: "500" }}>
+                    <span style={{ color: "var(--bondze-gold)" }}>●</span>{" "}
+                    Vertical Integration
+                  </p>
+                  <p style={{ fontWeight: "500" }}>
+                    <span style={{ color: "var(--bondze-gold)" }}>●</span>{" "}
+                    Technology Integration
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -549,92 +1365,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Leadership Team Section */}
-      <section className="section">
-        <div className="container">
-          <SectionTitle
-            title="Leadership Team"
-            subtitle="Experienced professionals guiding our strategic vision and operational excellence"
-          />
-          <div className="grid grid-2" style={{ gap: "3rem" }}>
-            {leadershipTeam.map((member, index) => (
-              <div
-                key={index}
-                className="card"
-                style={{ padding: "0", overflow: "hidden" }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    md: { flexDirection: "row" },
-                  }}
-                >
-                  <div
-                    style={{
-                      width: "100%",
-                      height: "200px",
-                      backgroundColor: "var(--bondze-light)",
-                      backgroundImage: `url(${member.image})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      position: "relative",
-                    }}
-                  >
-                    <div
-                      style={{
-                        position: "absolute",
-                        top: "1rem",
-                        right: "1rem",
-                        width: "48px",
-                        height: "48px",
-                        backgroundColor: "var(--bondze-gold)",
-                        borderRadius: "50%",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        color: "var(--bondze-white)",
-                      }}
-                    >
-                      <Users size={24} />
-                    </div>
-                  </div>
-                  <div style={{ padding: "2rem" }}>
-                    <h3
-                      style={{
-                        fontSize: "1.25rem",
-                        fontWeight: "600",
-                        marginBottom: "0.5rem",
-                        color: "var(--bondze-charcoal)",
-                      }}
-                    >
-                      {member.name}
-                    </h3>
-                    <p
-                      style={{
-                        color: "var(--bondze-gold)",
-                        fontWeight: "500",
-                        marginBottom: "1rem",
-                      }}
-                    >
-                      {member.position}
-                    </p>
-                    <p
-                      style={{
-                        color: "var(--text-muted)",
-                        lineHeight: "1.6",
-                      }}
-                    >
-                      {member.expertise}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Company Milestones Section */}
       <section className="section section-dark">
         <div className="container">
@@ -649,63 +1379,145 @@ const About = () => {
               sector
             </p>
           </div>
-          <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
-            <div className="grid grid-3" style={{ gap: "2rem" }}>
+
+          {/* Milestones Timeline */}
+          <div
+            style={{
+              maxWidth: "1200px",
+              margin: "0 auto",
+              position: "relative",
+            }}
+          >
+            {/* Timeline Line */}
+            <div
+              style={{
+                position: "absolute",
+                left: "50%",
+                top: "0",
+                bottom: "0",
+                width: "3px",
+                background:
+                  "linear-gradient(180deg, var(--bondze-gold), var(--bondze-gold-light))",
+                transform: "translateX(-50%)",
+                zIndex: "1",
+              }}
+            ></div>
+
+            {/* Milestone Cards */}
+            <div style={{ position: "relative", zIndex: "2" }}>
               {milestones.map((milestone, index) => (
                 <div
                   key={index}
-                  className="card"
                   style={{
-                    padding: "2rem",
-                    textAlign: "center",
-                    backgroundColor: "var(--bondze-charcoal)",
-                    border: "1px solid var(--bondze-gold)",
+                    display: "flex",
+                    justifyContent: index % 2 === 0 ? "flex-start" : "flex-end",
+                    marginBottom: "3rem",
+                    position: "relative",
                   }}
                 >
+                  {/* Milestone Card */}
+                  <div
+                    className="card"
+                    style={{
+                      width: "45%",
+                      padding: "2.5rem",
+                      backgroundColor: "var(--bondze-white)",
+                      border: "2px solid var(--bondze-gold)",
+                      boxShadow: "0 15px 35px rgba(212, 175, 55, 0.2)",
+                      transform:
+                        index % 2 === 0
+                          ? "translateX(10px)"
+                          : "translateX(-10px)",
+                      transition: "all 0.3s ease",
+                      position: "relative",
+                    }}
+                  >
+                    {/* Year Badge */}
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "-15px",
+                        left: index % 2 === 0 ? "auto" : "-15px",
+                        right: index % 2 === 0 ? "-15px" : "auto",
+                        width: "60px",
+                        height: "60px",
+                        background:
+                          "linear-gradient(135deg, var(--bondze-gold), var(--bondze-gold-light))",
+                        borderRadius: "50%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "var(--bondze-white)",
+                        fontSize: "0.875rem",
+                        fontWeight: "700",
+                        boxShadow: "0 5px 15px rgba(212, 175, 55, 0.4)",
+                        border: "3px solid var(--bondze-white)",
+                      }}
+                    >
+                      {milestone.year}
+                    </div>
+
+                    {/* Icon */}
+                    <div
+                      style={{
+                        width: "70px",
+                        height: "70px",
+                        background:
+                          "linear-gradient(135deg, var(--bondze-blue), var(--bondze-blue-light))",
+                        borderRadius: "50%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        margin: "1rem auto 1.5rem",
+                        color: "var(--bondze-white)",
+                        boxShadow: "0 8px 20px rgba(27, 31, 59, 0.3)",
+                      }}
+                    >
+                      {milestone.icon}
+                    </div>
+
+                    {/* Content */}
+                    <h3
+                      style={{
+                        fontSize: "1.375rem",
+                        fontWeight: "700",
+                        marginBottom: "1rem",
+                        color: "var(--bondze-charcoal)",
+                        textAlign: "center",
+                        lineHeight: "1.3",
+                      }}
+                    >
+                      {milestone.title}
+                    </h3>
+                    <p
+                      style={{
+                        color: "var(--text-muted)",
+                        lineHeight: "1.7",
+                        fontSize: "1rem",
+                        textAlign: "center",
+                        margin: 0,
+                      }}
+                    >
+                      {milestone.description}
+                    </p>
+                  </div>
+
+                  {/* Timeline Dot */}
                   <div
                     style={{
-                      width: "64px",
-                      height: "64px",
+                      position: "absolute",
+                      left: "50%",
+                      top: "2.5rem",
+                      transform: "translateX(-50%)",
+                      width: "20px",
+                      height: "20px",
                       backgroundColor: "var(--bondze-gold)",
                       borderRadius: "50%",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      margin: "0 auto 1.5rem",
-                      color: "var(--bondze-white)",
+                      border: "4px solid var(--bondze-white)",
+                      boxShadow: "0 0 0 4px var(--bondze-gold-light)",
+                      zIndex: "3",
                     }}
-                  >
-                    {milestone.icon}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: "1.25rem",
-                      fontWeight: "700",
-                      color: "var(--bondze-gold)",
-                      marginBottom: "0.75rem",
-                    }}
-                  >
-                    {milestone.year}
-                  </div>
-                  <h3
-                    style={{
-                      fontSize: "1.125rem",
-                      fontWeight: "600",
-                      marginBottom: "1rem",
-                      color: "var(--text-light)",
-                    }}
-                  >
-                    {milestone.title}
-                  </h3>
-                  <p
-                    style={{
-                      color: "var(--text-muted)",
-                      lineHeight: "1.6",
-                      fontSize: "0.95rem",
-                    }}
-                  >
-                    {milestone.description}
-                  </p>
+                  ></div>
                 </div>
               ))}
             </div>

@@ -5,7 +5,12 @@ const Governance = () => {
   return (
     <main>
       {/* Page Header */}
-      <section className="page-header">
+      <section
+        className="page-header"
+        style={{
+          backgroundImage: 'url("/images/image-12.webp")',
+        }}
+      >
         <div className="container">
           <h1 className="page-header-title">Governance & Compliance</h1>
           <p className="page-header-subtitle">
@@ -595,6 +600,60 @@ const Governance = () => {
                 Reports reviewed promptly and investigated thoroughly by
                 appropriate personnel or external advisors.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Governance Flowchart */}
+      <section className="section">
+        <div className="container">
+          <SectionTitle
+            title="Governance Structure"
+            subtitle="Our comprehensive governance framework and decision-making processes"
+          />
+          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+            <div
+              className="card"
+              style={{
+                padding: "2rem",
+                maxWidth: "900px",
+                margin: "0 auto",
+              }}
+            >
+              <img
+                src="/governance .png"
+                alt="Governance Structure Flowchart"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  maxHeight: "600px",
+                  objectFit: "contain",
+                }}
+              />
+              <div style={{ marginTop: "1.5rem" }}>
+                <h4
+                  style={{
+                    fontSize: "1.125rem",
+                    marginBottom: "0.5rem",
+                    color: "var(--color-primary)",
+                  }}
+                >
+                  Governance Framework Overview
+                </h4>
+                <p
+                  style={{
+                    color: "var(--text-muted)",
+                    lineHeight: "1.6",
+                    fontSize: "0.875rem",
+                    margin: 0,
+                  }}
+                >
+                  Our governance structure ensures clear accountability, proper
+                  oversight, and effective risk management across all levels of
+                  the organization.
+                </p>
+              </div>
             </div>
           </div>
         </div>

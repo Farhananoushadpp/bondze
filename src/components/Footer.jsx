@@ -42,7 +42,6 @@ const Footer = () => {
               discipline, connecting Africa and global markets.
             </p>
           </div>
-
           <div>
             <h3 className="footer-heading">Quick Links</h3>
             <ul className="footer-links">

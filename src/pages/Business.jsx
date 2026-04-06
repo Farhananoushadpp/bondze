@@ -1,11 +1,32 @@
 import SectionTitle from "../components/SectionTitle";
-import { Gem, TrendingUp, CircleDollarSign, Hammer } from "lucide-react";
+import {
+  Gem,
+  TrendingUp,
+  CircleDollarSign,
+  Hammer,
+  Zap,
+  Factory,
+  Battery,
+  Cpu,
+  Wrench,
+  Shield,
+  Scale,
+  DollarSign,
+  Star,
+  Diamond,
+  Target,
+} from "lucide-react";
 
 const Business = () => {
   return (
     <main>
       {/* Page Header */}
-      <section className="page-header">
+      <section
+        className="page-header"
+        style={{
+          backgroundImage: 'url("/images/image-02.webp")',
+        }}
+      >
         <div className="container">
           <h1 className="page-header-title">Our Business</h1>
           <p className="page-header-subtitle">
@@ -451,6 +472,400 @@ const Business = () => {
         </div>
       </section>
 
+      {/* Our Business Models */}
+      <section className="section section-dark">
+        <div className="container">
+          <SectionTitle
+            title="Our Business Models"
+            subtitle="Integrated mining and trading operations creating value across the precious metals value chain"
+          />
+
+          {/* Business Models Visual Header */}
+          <div
+            style={{
+              textAlign: "center",
+              marginBottom: "4rem",
+              position: "relative",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "2rem",
+                marginBottom: "2rem",
+                flexWrap: "wrap",
+              }}
+            >
+              <div
+                style={{
+                  width: "200px",
+                  height: "140px",
+                  overflow: "hidden",
+                  borderRadius: "var(--radius-lg)",
+                  boxShadow: "var(--shadow-lg)",
+                  border: "2px solid var(--bondze-gold)",
+                  transform: "rotate(-2deg)",
+                  transition: "transform 0.3s ease",
+                }}
+              >
+                <img
+                  src="/images/image-05.webp"
+                  alt="Business Model 1"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+              <div
+                style={{
+                  width: "200px",
+                  height: "140px",
+                  overflow: "hidden",
+                  borderRadius: "var(--radius-lg)",
+                  boxShadow: "var(--shadow-lg)",
+                  border: "2px solid var(--bondze-gold)",
+                  transform: "rotate(2deg)",
+                  transition: "transform 0.3s ease",
+                }}
+              >
+                <img
+                  src="/images/image-06.webp"
+                  alt="Business Model 2"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+            </div>
+            <p
+              style={{
+                fontSize: "1.125rem",
+                color: "var(--text-light)",
+                maxWidth: "600px",
+                margin: "0 auto",
+                fontStyle: "italic",
+                opacity: 0.9,
+              }}
+            >
+              Three interconnected pillars driving our sustainable value
+              creation
+            </p>
+          </div>
+
+          {/* Business Models Grid */}
+          <div
+            className="grid grid-3"
+            style={{ gap: "2.5rem", marginTop: "2rem" }}
+          >
+            {/* Core Activities */}
+            <div
+              className="card"
+              style={{
+                backgroundColor: "var(--bondze-white)",
+                border: "2px solid var(--bondze-gold)",
+                padding: "2.5rem",
+                textAlign: "center",
+                transition: "all 0.3s ease",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              {/* Background Pattern */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  right: "0",
+                  height: "4px",
+                  background:
+                    "linear-gradient(90deg, var(--bondze-gold), var(--bondze-gold-light))",
+                }}
+              ></div>
+
+              <div
+                style={{
+                  width: "80px",
+                  height: "80px",
+                  background:
+                    "linear-gradient(135deg, var(--bondze-blue), var(--bondze-blue-light))",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  margin: "0 auto 2rem",
+                  color: "var(--bondze-white)",
+                }}
+              >
+                <Hammer size={36} />
+              </div>
+              <h3
+                style={{
+                  fontSize: "1.5rem",
+                  fontWeight: "700",
+                  color: "var(--bondze-charcoal)",
+                  marginBottom: "1.5rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
+                }}
+              >
+                Core Activities
+              </h3>
+              <div
+                style={{
+                  textAlign: "left",
+                  color: "var(--text-muted)",
+                  lineHeight: "1.8",
+                  fontSize: "1rem",
+                }}
+              >
+                <p style={{ marginBottom: "1rem", fontWeight: "500" }}>
+                  <span
+                    style={{
+                      color: "var(--bondze-gold)",
+                      marginRight: "0.5rem",
+                    }}
+                  >
+                    ◆
+                  </span>
+                  <strong style={{ color: "var(--bondze-charcoal)" }}>
+                    Acquisition
+                  </strong>{" "}
+                  of early-stage mining opportunities
+                </p>
+                <p style={{ marginBottom: "1rem", fontWeight: "500" }}>
+                  <span
+                    style={{
+                      color: "var(--bondze-gold)",
+                      marginRight: "0.5rem",
+                    }}
+                  >
+                    ◆
+                  </span>
+                  <strong style={{ color: "var(--bondze-charcoal)" }}>
+                    Development
+                  </strong>{" "}
+                  and operation of mining projects
+                </p>
+                <p style={{ marginBottom: "1rem", fontWeight: "500" }}>
+                  <span
+                    style={{
+                      color: "var(--bondze-gold)",
+                      marginRight: "0.5rem",
+                    }}
+                  >
+                    ◆
+                  </span>
+                  <strong style={{ color: "var(--bondze-charcoal)" }}>
+                    Trading
+                  </strong>{" "}
+                  of gold and minerals via Dubai and globally
+                </p>
+                <p style={{ fontWeight: "500" }}>
+                  <span
+                    style={{
+                      color: "var(--bondze-gold)",
+                      marginRight: "0.5rem",
+                    }}
+                  >
+                    ◆
+                  </span>
+                  <strong style={{ color: "var(--bondze-charcoal)" }}>
+                    Future expansion
+                  </strong>{" "}
+                  into processing and refining
+                </p>
+              </div>
+            </div>
+
+            {/* Revenue Streams */}
+            <div
+              className="card"
+              style={{
+                backgroundColor: "var(--bondze-white)",
+                border: "2px solid var(--bondze-gold)",
+                padding: "2.5rem",
+                textAlign: "center",
+                transition: "all 0.3s ease",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              {/* Background Pattern */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  right: "0",
+                  height: "4px",
+                  background:
+                    "linear-gradient(90deg, var(--bondze-gold), var(--bondze-gold-light))",
+                }}
+              ></div>
+
+              <div
+                style={{
+                  width: "80px",
+                  height: "80px",
+                  background:
+                    "linear-gradient(135deg, var(--bondze-blue), var(--bondze-blue-light))",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  margin: "0 auto 2rem",
+                  color: "var(--bondze-white)",
+                }}
+              >
+                <CircleDollarSign size={36} />
+              </div>
+              <h3
+                style={{
+                  fontSize: "1.5rem",
+                  fontWeight: "700",
+                  color: "var(--bondze-charcoal)",
+                  marginBottom: "1.5rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
+                }}
+              >
+                Revenue Streams
+              </h3>
+              <div
+                style={{
+                  textAlign: "left",
+                  color: "var(--text-muted)",
+                  lineHeight: "1.8",
+                  fontSize: "1rem",
+                }}
+              >
+                <p style={{ marginBottom: "1rem", fontWeight: "500" }}>
+                  <span
+                    style={{
+                      color: "var(--bondze-gold)",
+                      marginRight: "0.5rem",
+                    }}
+                  >
+                    ◆
+                  </span>
+                  <strong style={{ color: "var(--bondze-charcoal)" }}>
+                    Mining production
+                  </strong>{" "}
+                  revenues
+                </p>
+                <p style={{ marginBottom: "1rem", fontWeight: "500" }}>
+                  <span
+                    style={{
+                      color: "var(--bondze-gold)",
+                      marginRight: "0.5rem",
+                    }}
+                  >
+                    ◆
+                  </span>
+                  <strong style={{ color: "var(--bondze-charcoal)" }}>
+                    Trading margins
+                  </strong>{" "}
+                  from commodity sales
+                </p>
+                <p style={{ fontWeight: "500" }}>
+                  <span
+                    style={{
+                      color: "var(--bondze-gold)",
+                      marginRight: "0.5rem",
+                    }}
+                  >
+                    ◆
+                  </span>
+                  <strong style={{ color: "var(--bondze-charcoal)" }}>
+                    Operational efficiencies
+                  </strong>{" "}
+                  and scale advantages
+                </p>
+              </div>
+            </div>
+
+            {/* Model Advantage */}
+            <div
+              className="card"
+              style={{
+                backgroundColor: "var(--bondze-white)",
+                border: "2px solid var(--bondze-gold)",
+                padding: "2.5rem",
+                textAlign: "center",
+                transition: "all 0.3s ease",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              {/* Background Pattern */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  right: "0",
+                  height: "4px",
+                  background:
+                    "linear-gradient(90deg, var(--bondze-gold), var(--bondze-gold-light))",
+                }}
+              ></div>
+
+              <div
+                style={{
+                  width: "80px",
+                  height: "80px",
+                  background:
+                    "linear-gradient(135deg, var(--bondze-blue), var(--bondze-blue-light))",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  margin: "0 auto 2rem",
+                  color: "var(--bondze-white)",
+                }}
+              >
+                <TrendingUp size={36} />
+              </div>
+              <h3
+                style={{
+                  fontSize: "1.5rem",
+                  fontWeight: "700",
+                  color: "var(--bondze-charcoal)",
+                  marginBottom: "1.5rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
+                }}
+              >
+                Model Advantage
+              </h3>
+              <div
+                style={{
+                  color: "var(--bondze-charcoal)",
+                  lineHeight: "1.8",
+                  fontSize: "1rem",
+                  textAlign: "center",
+                  fontStyle: "italic",
+                  padding: "1rem",
+                  backgroundColor: "var(--bondze-light)",
+                  borderRadius: "var(--radius-md)",
+                  borderLeft: "4px solid var(--bondze-gold)",
+                }}
+              >
+                By Combining upstream mining with downstream trading, alongside
+                geological explorations of new fields, BONDZE captures multiple
+                layers of value while maintaining control over production flow.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Other Minerals & Metals Trading */}
       <section className="section section-light">
         <div className="container">
@@ -458,92 +873,461 @@ const Business = () => {
             title="Other Minerals & Metals Trading"
             subtitle="Diversified trading operations across critical minerals"
           />
-          <div className="card-grid card-grid-3">
-            <div className="card" style={{ padding: "2rem" }}>
-              <h4 style={{ fontSize: "1.25rem", marginBottom: "1rem" }}>
-                Critical Minerals
-              </h4>
-              <p
+
+          {/* Trading Categories Visual Layout */}
+          <div
+            style={{
+              maxWidth: "1200px",
+              margin: "0 auto",
+              position: "relative",
+            }}
+          >
+            {/* Trading Categories Grid */}
+            <div
+              className="grid grid-3"
+              style={{ gap: "2rem", position: "relative", zIndex: "1" }}
+            >
+              {/* Critical Minerals */}
+              <div
+                className="card"
                 style={{
-                  color: "var(--text-muted)",
-                  lineHeight: "1.6",
-                  marginBottom: "1rem",
+                  padding: "2.5rem",
+                  backgroundColor: "var(--bondze-white)",
+                  border: "2px solid var(--bondze-gold)",
+                  transition: "all 0.3s ease",
+                  position: "relative",
+                  textAlign: "center",
                 }}
               >
-                Strategic positioning in minerals essential for battery
-                technology and renewable energy infrastructure.
-              </p>
-              <ul
+                {/* Icon */}
+                <div
+                  style={{
+                    width: "70px",
+                    height: "70px",
+                    background:
+                      "linear-gradient(135deg, var(--bondze-blue), var(--bondze-blue-light))",
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    margin: "0 auto 1.5rem",
+                    color: "var(--bondze-white)",
+                  }}
+                >
+                  <Zap size={36} />
+                </div>
+
+                <h3
+                  style={{
+                    fontSize: "1.5rem",
+                    fontWeight: "700",
+                    color: "var(--bondze-charcoal)",
+                    marginBottom: "1rem",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  Critical Minerals
+                </h3>
+
+                <p
+                  style={{
+                    color: "var(--text-muted)",
+                    lineHeight: "1.7",
+                    fontSize: "1rem",
+                    marginBottom: "1.5rem",
+                  }}
+                >
+                  Strategic positioning in minerals essential for battery
+                  technology and renewable energy infrastructure.
+                </p>
+
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.75rem",
+                  }}
+                >
+                  <div
+                    style={{
+                      padding: "0.75rem",
+                      backgroundColor: "var(--bondze-light)",
+                      borderRadius: "var(--radius-md)",
+                      borderLeft: "3px solid var(--bondze-gold)",
+                      textAlign: "left",
+                      fontWeight: "500",
+                      color: "var(--bondze-charcoal)",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.75rem",
+                    }}
+                  >
+                    <Zap
+                      size={18}
+                      style={{ color: "var(--bondze-gold)", flexShrink: 0 }}
+                    />
+                    Cobalt
+                  </div>
+                  <div
+                    style={{
+                      padding: "0.75rem",
+                      backgroundColor: "var(--bondze-light)",
+                      borderRadius: "var(--radius-md)",
+                      borderLeft: "3px solid var(--bondze-gold)",
+                      textAlign: "left",
+                      fontWeight: "500",
+                      color: "var(--bondze-charcoal)",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.75rem",
+                    }}
+                  >
+                    <Battery
+                      size={18}
+                      style={{ color: "var(--bondze-gold)", flexShrink: 0 }}
+                    />
+                    Lithium
+                  </div>
+                  <div
+                    style={{
+                      padding: "0.75rem",
+                      backgroundColor: "var(--bondze-light)",
+                      borderRadius: "var(--radius-md)",
+                      borderLeft: "3px solid var(--bondze-gold)",
+                      textAlign: "left",
+                      fontWeight: "500",
+                      color: "var(--bondze-charcoal)",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.75rem",
+                    }}
+                  >
+                    <Cpu
+                      size={18}
+                      style={{ color: "var(--bondze-gold)", flexShrink: 0 }}
+                    />
+                    Nickel
+                  </div>
+                </div>
+              </div>
+
+              {/* Industrial Metals */}
+              <div
+                className="card"
                 style={{
-                  paddingLeft: "1.5rem",
-                  color: "var(--text-muted)",
-                  fontSize: "0.875rem",
+                  padding: "2.5rem",
+                  backgroundColor: "var(--bondze-white)",
+                  border: "2px solid var(--bondze-gold)",
+                  transition: "all 0.3s ease",
+                  position: "relative",
+                  textAlign: "center",
                 }}
               >
-                <li style={{ marginBottom: "0.5rem" }}>Cobalt</li>
-                <li style={{ marginBottom: "0.5rem" }}>Lithium</li>
-                <li>Nickel</li>
-              </ul>
-            </div>
-            <div className="card" style={{ padding: "2rem" }}>
-              <h4 style={{ fontSize: "1.25rem", marginBottom: "1rem" }}>
-                Industrial Metals
-              </h4>
-              <p
+                {/* Icon */}
+                <div
+                  style={{
+                    width: "70px",
+                    height: "70px",
+                    background:
+                      "linear-gradient(135deg, var(--bondze-blue), var(--bondze-blue-light))",
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    margin: "0 auto 1.5rem",
+                    color: "var(--bondze-white)",
+                  }}
+                >
+                  <Factory size={36} />
+                </div>
+
+                <h3
+                  style={{
+                    fontSize: "1.5rem",
+                    fontWeight: "700",
+                    color: "var(--bondze-charcoal)",
+                    marginBottom: "1rem",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  Industrial Metals
+                </h3>
+
+                <p
+                  style={{
+                    color: "var(--text-muted)",
+                    lineHeight: "1.7",
+                    fontSize: "1rem",
+                    marginBottom: "1.5rem",
+                  }}
+                >
+                  Trading operations in industrial metals supporting
+                  infrastructure development and manufacturing.
+                </p>
+
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.75rem",
+                  }}
+                >
+                  <div
+                    style={{
+                      padding: "0.75rem",
+                      backgroundColor: "var(--bondze-light)",
+                      borderRadius: "var(--radius-md)",
+                      borderLeft: "3px solid var(--bondze-gold)",
+                      textAlign: "left",
+                      fontWeight: "500",
+                      color: "var(--bondze-charcoal)",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.75rem",
+                    }}
+                  >
+                    <Shield
+                      size={18}
+                      style={{ color: "var(--bondze-gold)", flexShrink: 0 }}
+                    />
+                    Zinc
+                  </div>
+                  <div
+                    style={{
+                      padding: "0.75rem",
+                      backgroundColor: "var(--bondze-light)",
+                      borderRadius: "var(--radius-md)",
+                      borderLeft: "3px solid var(--bondze-gold)",
+                      textAlign: "left",
+                      fontWeight: "500",
+                      color: "var(--bondze-charcoal)",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.75rem",
+                    }}
+                  >
+                    <Scale
+                      size={18}
+                      style={{ color: "var(--bondze-gold)", flexShrink: 0 }}
+                    />
+                    Lead
+                  </div>
+                  <div
+                    style={{
+                      padding: "0.75rem",
+                      backgroundColor: "var(--bondze-light)",
+                      borderRadius: "var(--radius-md)",
+                      borderLeft: "3px solid var(--bondze-gold)",
+                      textAlign: "left",
+                      fontWeight: "500",
+                      color: "var(--bondze-charcoal)",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.75rem",
+                    }}
+                  >
+                    <DollarSign
+                      size={18}
+                      style={{ color: "var(--bondze-gold)", flexShrink: 0 }}
+                    />
+                    Tin
+                  </div>
+                </div>
+              </div>
+
+              {/* Precious Metals */}
+              <div
+                className="card"
                 style={{
-                  color: "var(--text-muted)",
-                  lineHeight: "1.6",
-                  marginBottom: "1rem",
+                  padding: "2.5rem",
+                  backgroundColor: "var(--bondze-white)",
+                  border: "2px solid var(--bondze-gold)",
+                  transition: "all 0.3s ease",
+                  position: "relative",
+                  textAlign: "center",
                 }}
               >
-                Trading operations in industrial metals supporting
-                infrastructure development and manufacturing.
-              </p>
-              <ul
-                style={{
-                  paddingLeft: "1.5rem",
-                  color: "var(--text-muted)",
-                  fontSize: "0.875rem",
-                }}
-              >
-                <li style={{ marginBottom: "0.5rem" }}>Zinc</li>
-                <li style={{ marginBottom: "0.5rem" }}>Lead</li>
-                <li>Tin</li>
-              </ul>
-            </div>
-            <div className="card" style={{ padding: "2rem" }}>
-              <h4 style={{ fontSize: "1.25rem", marginBottom: "1rem" }}>
-                Precious Metals
-              </h4>
-              <p
-                style={{
-                  color: "var(--text-muted)",
-                  lineHeight: "1.6",
-                  marginBottom: "1rem",
-                }}
-              >
-                Expanding precious metals portfolio beyond gold to include other
-                high-value metals.
-              </p>
-              <ul
-                style={{
-                  paddingLeft: "1.5rem",
-                  color: "var(--text-muted)",
-                  fontSize: "0.875rem",
-                }}
-              >
-                <li style={{ marginBottom: "0.5rem" }}>Silver</li>
-                <li style={{ marginBottom: "0.5rem" }}>
-                  Platinum Group Metals
-                </li>
-                <li>Strategic sourcing</li>
-              </ul>
+                {/* Icon */}
+                <div
+                  style={{
+                    width: "70px",
+                    height: "70px",
+                    background:
+                      "linear-gradient(135deg, var(--bondze-blue), var(--bondze-blue-light))",
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    margin: "0 auto 1.5rem",
+                    color: "var(--bondze-white)",
+                  }}
+                >
+                  <Gem size={36} />
+                </div>
+
+                <h3
+                  style={{
+                    fontSize: "1.5rem",
+                    fontWeight: "700",
+                    color: "var(--bondze-charcoal)",
+                    marginBottom: "1rem",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  Precious Metals
+                </h3>
+
+                <p
+                  style={{
+                    color: "var(--text-muted)",
+                    lineHeight: "1.7",
+                    fontSize: "1rem",
+                    marginBottom: "1.5rem",
+                  }}
+                >
+                  Expanding precious metals portfolio beyond gold to include
+                  other high-value metals.
+                </p>
+
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.75rem",
+                  }}
+                >
+                  <div
+                    style={{
+                      padding: "0.75rem",
+                      backgroundColor: "var(--bondze-light)",
+                      borderRadius: "var(--radius-md)",
+                      borderLeft: "3px solid var(--bondze-gold)",
+                      textAlign: "left",
+                      fontWeight: "500",
+                      color: "var(--bondze-charcoal)",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.75rem",
+                    }}
+                  >
+                    <Star
+                      size={18}
+                      style={{ color: "var(--bondze-gold)", flexShrink: 0 }}
+                    />
+                    Silver
+                  </div>
+                  <div
+                    style={{
+                      padding: "0.75rem",
+                      backgroundColor: "var(--bondze-light)",
+                      borderRadius: "var(--radius-md)",
+                      borderLeft: "3px solid var(--bondze-gold)",
+                      textAlign: "left",
+                      fontWeight: "500",
+                      color: "var(--bondze-charcoal)",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.75rem",
+                    }}
+                  >
+                    <Diamond
+                      size={18}
+                      style={{ color: "var(--bondze-gold)", flexShrink: 0 }}
+                    />
+                    Platinum Group Metals
+                  </div>
+                  <div
+                    style={{
+                      padding: "0.75rem",
+                      backgroundColor: "var(--bondze-light)",
+                      borderRadius: "var(--radius-md)",
+                      borderLeft: "3px solid var(--bondze-gold)",
+                      textAlign: "left",
+                      fontWeight: "500",
+                      color: "var(--bondze-charcoal)",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.75rem",
+                    }}
+                  >
+                    <Target
+                      size={18}
+                      style={{ color: "var(--bondze-gold)", flexShrink: 0 }}
+                    />
+                    Strategic sourcing
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Business Flowchart */}
+      <section className="section">
+        <div className="container">
+          <SectionTitle
+            title="Business Model Structure"
+            subtitle="Our integrated business operations and value chain processes"
+          />
+          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+            <div
+              className="card"
+              style={{
+                padding: "2rem",
+                backgroundColor: "var(--color-light)",
+                border: "1px solid var(--color-gold)",
+                maxWidth: "900px",
+                margin: "0 auto",
+              }}
+            >
+              <img
+                src="/business.png"
+                alt="Business Model Flowchart"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  maxHeight: "600px",
+                  objectFit: "contain",
+                }}
+              />
+              <div style={{ marginTop: "1.5rem" }}>
+                <h4
+                  style={{
+                    fontSize: "1.125rem",
+                    marginBottom: "0.5rem",
+                    color: "var(--color-primary)",
+                  }}
+                >
+                  Integrated Business Operations
+                </h4>
+                <p
+                  style={{
+                    color: "var(--text-muted)",
+                    lineHeight: "1.6",
+                    fontSize: "0.875rem",
+                    margin: 0,
+                  }}
+                >
+                  Our business model integrates mining operations, trading
+                  activities, and asset development to create value across the
+                  precious metals supply chain.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Disclaimer */}
+      <section className="section section-light" style={{ padding: "3rem 0" }}>
+        <div className="container">
           <div
             style={{
               textAlign: "center",
-              marginTop: "3rem",
               padding: "2rem",
               backgroundColor: "var(--text-dark)",
               borderRadius: "var(--radius-lg)",
