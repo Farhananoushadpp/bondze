@@ -14,7 +14,8 @@ const Partnerships = () => {
         <div className="container">
           <h1 className="page-header-title">Partnerships</h1>
           <p className="page-header-subtitle">
-            Strategic relationships across the precious metals value chain.
+            Strategic relationships across the precious metals value and
+            minerals chain.
           </p>
         </div>
       </section>

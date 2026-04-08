@@ -29,13 +29,14 @@ const About = () => {
       name: "KITTY ZHOU HAIOU",
       position:
         "Vice Chairlady, Director Of International Relations and Global Logistics Advisor",
-      image: "/images/image-31.webp",
+      image: "/images/image-32.webp",
     },
     {
       name: "ADAMO NJIENE NKUMBO",
       position:
         "African Business PRO Advisor and Middle East Market Development",
-      image: "/images/image-32.webp",
+
+      image: "/images/image-31.webp",
     },
     {
       name: "Hon WIDJILOWU MARTIN",
@@ -48,7 +49,7 @@ const About = () => {
       image: "/images/image-34.webp",
     },
     {
-      name: "SHAKIR KHA",
+      name: "SHAKIR KHAN",
       position: "Market Advisor",
       image: "/images/image-35.webp",
     },
@@ -103,7 +104,7 @@ const About = () => {
         }}
       >
         <div className="container">
-          <h1 className="page-header-title">About BPMM</h1>
+          <h1 className="page-header-title">About BONDZE</h1>
           <p className="page-header-subtitle">
             Building institutional-grade precious metals operations across
             Africa and global markets.
@@ -131,8 +132,8 @@ const About = () => {
                   marginBottom: "1.5rem",
                 }}
               >
-                BONDZE Precious Metals and Mineral Trading LLC (BPMM) is a
-                corporate platform operating across the precious metals value
+                BONDZE Precious Metals and Mineral Trading LLC is a corporate
+                platform operating across the precious metals value and minerals
                 chain. Founded with a commitment to institutional discipline, we
                 bridge African mining operations with international markets
                 through our Dubai headquarters.
@@ -151,7 +152,7 @@ const About = () => {
               </p>
             </div>
             <div className="company-overview-image">
-              <img src="/overvew.jpg" alt="Company Overview" />
+              <img src="/overview.jpg" alt="Company Overview" />
             </div>
           </div>
         </div>
@@ -231,6 +232,7 @@ const About = () => {
                   >
                     CEO
                   </div>
+                  
                 </div>
                 <div style={{ padding: "2rem" }}>
                   <h3

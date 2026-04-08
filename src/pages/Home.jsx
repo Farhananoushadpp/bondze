@@ -198,7 +198,7 @@ const Home = () => {
         <div className="container">
           <SectionTitle
             title="Who We Are"
-            subtitle="BONDZE Precious Metals and Mineral Trading LLC is an institutional-grade platform operating across the precious metals value chain. We combine mining development expertise with disciplined trading operations."
+            subtitle="BONDZE Precious Metals and Mineral Trading LLC is an institutional-grade platform operating across the precious metals value and minerals chain. We combine mining development expertise with disciplined trading operations."
           />
           <div className="card-grid card-grid-3">
             <div className="feature-card card-gold-accent">

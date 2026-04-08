@@ -61,18 +61,18 @@ This is a frontend-only corporate website designed with an institutional aesthet
 
 ## Routes
 
-| Path | Page |
-|------|------|
-| `/` | Home |
-| `/about` | About BPMM |
-| `/business` | Our Business |
-| `/geography` | Geographic Footprint |
-| `/governance` | Governance & Compliance |
-| `/partnerships` | Partnerships |
-| `/investors` | Investors |
-| `/careers` | Careers |
-| `/contact` | Contact |
-| `/legal` | Legal & Policies |
+| Path            | Page                    |
+| --------------- | ----------------------- |
+| `/`             | Home                    |
+| `/about`        | About BONDZE            |
+| `/business`     | Our Business            |
+| `/geography`    | Geographic Footprint    |
+| `/governance`   | Governance & Compliance |
+| `/partnerships` | Partnerships            |
+| `/investors`    | Investors               |
+| `/careers`      | Careers                 |
+| `/contact`      | Contact                 |
+| `/legal`        | Legal & Policies        |
 
 ## Getting Started
 
@@ -84,21 +84,25 @@ This is a frontend-only corporate website designed with an institutional aesthet
 ### Installation
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
 2. Start development server:
+
 ```bash
 npm run dev
 ```
 
 3. Build for production:
+
 ```bash
 npm run build
 ```
 
 4. Preview production build:
+
 ```bash
 npm run preview
 ```
@@ -113,15 +117,15 @@ npm run preview
 
 ## Color System
 
-| Role | Color | Hex |
-|------|-------|-----|
-| Primary Dark | Dark Blue | `#0a1628` |
-| Primary | Navy | `#1a2a4a` |
-| Primary Light | Light Navy | `#2a3f6a` |
-| Accent | Gold | `#b8860b` |
-| Accent Light | Light Gold | `#d4af37` |
-| Charcoal | Dark Gray | `#2d3436` |
-| Background | White | `#ffffff` |
+| Role           | Color      | Hex       |
+| -------------- | ---------- | --------- |
+| Primary Dark   | Dark Blue  | `#0a1628` |
+| Primary        | Navy       | `#1a2a4a` |
+| Primary Light  | Light Navy | `#2a3f6a` |
+| Accent         | Gold       | `#b8860b` |
+| Accent Light   | Light Gold | `#d4af37` |
+| Charcoal       | Dark Gray  | `#2d3436` |
+| Background     | White      | `#ffffff` |
 | Background Alt | Light Gray | `#f7f9fc` |
 
 ## Browser Support

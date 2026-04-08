@@ -386,7 +386,7 @@ const Business = () => {
                 >
                   Development of processing capabilities to upgrade raw
                   concentrates to higher-value products, capturing additional
-                  margin in the value chain.
+                  margin in the value and minerals chain.
                 </p>
               </div>
               <div className="card" style={{ marginBottom: "1.5rem" }}>
@@ -477,7 +477,7 @@ const Business = () => {
         <div className="container">
           <SectionTitle
             title="Our Business Models"
-            subtitle="Integrated mining and trading operations creating value across the precious metals value chain"
+            subtitle="Integrated mining and trading operations creating value across the precious metals value and minerals chain"
           />
 
           {/* Business Models Visual Header */}
@@ -1271,7 +1271,7 @@ const Business = () => {
         <div className="container">
           <SectionTitle
             title="Business Model Structure"
-            subtitle="Our integrated business operations and value chain processes"
+            subtitle="Our integrated business operations and value and minerals chain processes"
           />
           <div style={{ textAlign: "center", marginBottom: "3rem" }}>
             <div
