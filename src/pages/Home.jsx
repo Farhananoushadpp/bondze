@@ -24,16 +24,45 @@ const Home = () => {
 
   // Video carousel state
   const [currentVideo, setCurrentVideo] = useState(0);
+  const [nextVideo, setNextVideo] = useState(1);
+  const [logoAnimated, setLogoAnimated] = useState(false);
 
-  const videos = ["/homebanner.mp4", "/homebanner2.mp4", "/homebanner3.mp4"];
+  const videos = [
+    {
+      src: "/images/1.webm",
+      duration: 5000,
+    },
+    {
+      src: "/images/2.webm",
+      duration: 5000,
+    },
+    {
+      src: "/images/3.webm",
+      duration: 5000,
+    },
+    {
+      src: "/images/4.webm",
+      duration: 5000,
+    },
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentVideo((prev) => (prev + 1) % videos.length);
+      setNextVideo((prev) => (prev + 2) % videos.length);
     }, 5000); // Change video every 5 seconds
 
     return () => clearInterval(interval);
   }, [videos.length]);
+
+  // Logo animation trigger
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLogoAnimated(true);
+    }, 800); // Start animation after 800ms
+
+    return () => clearTimeout(timer);
+  }, []);
   // Competitive advantages
   const advantages = [
     {
@@ -61,7 +90,6 @@ const Home = () => {
         "Comprehensive risk assessment and mitigation across all operations.",
     },
   ];
-
   // Latest insights and news
   const newsInsights = [
     {
@@ -91,105 +119,86 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-background">
+          {/* Current video layer */}
           <video
             key={currentVideo}
-            src={videos[currentVideo]}
+            src={videos[currentVideo].src}
             autoPlay
             loop
             muted
             playsInline
-            className="hero-video"
+            className="hero-video video-fade-in"
+          />
+          {/* Next video layer for smooth transition */}
+          <video
+            key={nextVideo}
+            src={videos[nextVideo].src}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="hero-video video-top video-fade-out"
           />
 
           {/* Video Indicators */}
-          <div
-            style={{
-              position: "absolute",
-              bottom: "20px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              display: "flex",
-              gap: "10px",
-              zIndex: "10",
-            }}
-          >
+          <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-3 z-10">
             {videos.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentVideo(index)}
-                style={{
-                  width: "12px",
-                  height: "12px",
-                  borderRadius: "50%",
-                  border: "2px solid rgba(255, 255, 255, 0.5)",
-                  backgroundColor:
-                    currentVideo === index
-                      ? "rgba(255, 255, 255, 0.8)"
-                      : "transparent",
-                  cursor: "pointer",
-                  transition: "all 0.3s ease",
+                onClick={() => {
+                  if (index !== currentVideo) {
+                    setCurrentVideo(index);
+                    setNextVideo((index + 1) % videos.length);
+                  }
                 }}
-                aria-label={`Go to video ${index + 1}`}
+                className={`w-3 h-3 rounded-full border-2 border-white border-opacity-50 cursor-pointer transition-all duration-300 ${
+                  currentVideo === index
+                    ? "bg-white bg-opacity-80"
+                    : "bg-transparent"
+                }`}
+                aria-label={`Go to scene ${index + 1}`}
               />
             ))}
           </div>
         </div>
         <div className="hero-content">
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              marginBottom: "2rem",
-            }}
-          >
+          <div className="flex justify-center items-center mb-4 md:mb-8">
             <img
               src="/logo1.svg"
               alt="BONDZE Logo"
-              style={{
-                width: "180px",
-                height: "auto",
-                maxWidth: "100%",
-              }}
+              className={`w-24 md:w-40 h-auto max-w-full transition-all duration-[1200ms] ease-out ${
+                logoAnimated
+                  ? "opacity-100 scale-100 translate-y-0"
+                  : "opacity-0 scale-80 -translate-y-5"
+              }`}
             />
           </div>
           <img
             src="/title.svg"
             alt="Connecting Africa's minerals to global markets"
-            className="hero-title"
-            style={{
-              width: "100% !important",
-              maxWidth: "1000px !important",
-              height: "auto !important",
-              minWidth: "600px !important",
-            }}
+            className="hero-title w-full max-w-4xl h-auto min-w-[300px] md:min-w-[600px] mobile-img-responsive"
           />
-          <p className="hero-subtitle">
-            BONDZE operates across mining development and precious metals
-            trading with institutional discipline.
+          <p className="hero-subtitle text-mobile-sm">
+            Gold, Copper and Bauxite Mining - Trading - Strategic Development
           </p>
-          <div className="hero-actions">
-            <NavLink to="/partnerships" className="btn btn-primary btn-lg">
-              Partner with us{" "}
-              <ArrowRight size={18} style={{ marginLeft: "8px" }} />
-            </NavLink>
-            <NavLink to="/contact" className="btn btn-outline-light btn-lg">
-              Contact
-            </NavLink>
+          <div className="hero-actions mobile-btn-stack">
             <a
               href="/BONDZE.pdf"
               download="BONDZE-Company-Profile.pdf"
-              className="btn btn-outline-light btn-lg"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                textDecoration: "none",
-              }}
+              className="btn btn-outline-light btn-lg inline-flex items-center gap-2 no-underline mobile-btn-full touch-target"
             >
               <Download size={18} />
-              Download Profile
+              View Company Profile
             </a>
+            <NavLink
+              to="/partnerships"
+              className="btn btn-primary btn-lg inline-flex items-center gap-2 mobile-btn-full touch-target"
+            >
+              Partner with us <ArrowRight size={18} />
+            </NavLink>
+            {/* <NavLink to="/contact" className="btn btn-outline-light btn-lg">
+              Contact
+            </NavLink> */}
           </div>
         </div>
       </section>
@@ -200,33 +209,53 @@ const Home = () => {
             title="Who We Are"
             subtitle="BONDZE Precious Metals and Mineral Trading LLC is an institutional-grade platform operating across the precious metals value and minerals chain. We combine mining development expertise with disciplined trading operations."
           />
-          <div className="card-grid card-grid-3">
-            <div className="feature-card card-gold-accent">
+          <div className="card-grid card-grid-3 mobile-grid-gap-sm">
+            <div className="feature-card card-gold-accent mobile-card-full mobile-card-padded">
               <div className="feature-card-image">
-                <img src="/who1.jpg" alt="Precious Metals" />
+
+                
+                <img
+                  src="/who1.jpg"
+                  alt="Precious Metals"
+                  className="mobile-img-cover"
+                />
               </div>
-              <h3 className="feature-card-title">Precious Metals</h3>
-              <p className="feature-card-text">
+              <h3 className="feature-card-title text-mobile-lg">
+                Precious Metals
+              </h3>
+              <p className="feature-card-text text-mobile-sm mobile-line-height">
                 Specialized in gold and silver trading with direct relationships
                 across African mining regions.
               </p>
             </div>
-            <div className="feature-card card-gold-accent">
+            <div className="feature-card card-gold-accent mobile-card-full mobile-card-padded">
               <div className="feature-card-image">
-                <img src="/who2.jpg" alt="Mining Development" />
+                <img
+                  src="/who2.jpg"
+                  alt="Mining Development"
+                  className="mobile-img-cover"
+                />
               </div>
-              <h3 className="feature-card-title">Mining Development</h3>
-              <p className="feature-card-text">
+              <h3 className="feature-card-title text-mobile-lg">
+                Mining Development
+              </h3>
+              <p className="feature-card-text text-mobile-sm mobile-line-height">
                 Strategic partnerships and SPVs for mine activation and
                 concession development.
               </p>
             </div>
-            <div className="feature-card card-gold-accent">
+            <div className="feature-card card-gold-accent mobile-card-full mobile-card-padded">
               <div className="feature-card-image">
-                <img src="/who3.jpg" alt="Global Reach" />
+                <img
+                  src="/who3.jpg"
+                  alt="Global Reach"
+                  className="mobile-img-cover"
+                />
               </div>
-              <h3 className="feature-card-title">Global Reach</h3>
-              <p className="feature-card-text">
+              <h3 className="feature-card-title text-mobile-lg">
+                Global Reach
+              </h3>
+              <p className="feature-card-text text-mobile-sm mobile-line-height">
                 Bridging African mining operations with international markets
                 through Dubai hub.
               </p>
@@ -241,84 +270,39 @@ const Home = () => {
             title="What We Do"
             subtitle="Our operations span three core verticals that form an integrated precious metals platform."
           />
-          <div className="grid grid-3" style={{ gap: "2rem" }}>
-            <div
-              className="card"
-              style={{ textAlign: "center", padding: "3rem" }}
-            >
-              <div
-                style={{
-                  width: "64px",
-                  height: "64px",
-                  backgroundColor: "var(--color-gold)",
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 1.5rem",
-                  color: "var(--text-light)",
-                }}
-              >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="card text-center p-12">
+              <div className="w-16 h-16 bg-bondze-gold rounded-full flex items-center justify-center mx-auto mb-6 text-white">
                 <Gem size={32} />
               </div>
-              <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>
+              <h3 className="text-2xl mb-4 font-bold text-bondze-blue">
                 Gold Mining & Asset Development
               </h3>
-              <p style={{ color: "var(--text-muted)", lineHeight: "1.7" }}>
+              <p className="text-gray-600 leading-relaxed">
                 Mine activation through strategic partnerships and SPVs.
                 Concession development with responsible extraction practices.
               </p>
             </div>
-            <div
-              className="card"
-              style={{ textAlign: "center", padding: "3rem" }}
-            >
-              <div
-                style={{
-                  width: "64px",
-                  height: "64px",
-                  backgroundColor: "var(--color-gold)",
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 1.5rem",
-                  color: "var(--text-light)",
-                }}
-              >
+            <div className="card text-center p-12">
+              <div className="w-16 h-16 bg-bondze-gold rounded-full flex items-center justify-center mx-auto mb-6 text-white">
                 <TrendingUp size={32} />
               </div>
-              <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>
+              <h3 className="text-2xl mb-4 font-bold text-bondze-blue">
                 Gold Trading & Offtake
               </h3>
-              <p style={{ color: "var(--text-muted)", lineHeight: "1.7" }}>
+              <p className="text-gray-600 leading-relaxed">
                 Doré sourcing from verified mining partners. Export logistics
                 and refinery sales to global markets.
               </p>
             </div>
-            <div
-              className="card"
-              style={{ textAlign: "center", padding: "3rem" }}
-            >
-              <div
-                style={{
-                  width: "64px",
-                  height: "64px",
-                  backgroundColor: "var(--color-gold)",
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 1.5rem",
-                  color: "var(--text-light)",
-                }}
-              >
+            <div className="card text-center p-12">
+              <div className="w-16 h-16 bg-bondze-gold rounded-full flex items-center justify-center mx-auto mb-6 text-white">
                 <Mountain size={32} />
               </div>
-              <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>
+              <h3 className="text-2xl mb-4 font-bold text-bondze-blue">
                 Minerals & Metals Trading
               </h3>
-              <p style={{ color: "var(--text-muted)", lineHeight: "1.7" }}>
+              <p className="text-gray-600 leading-relaxed">
                 Copper and other industrial metals trading. Processing and
                 value-addition capabilities.
               </p>
@@ -326,165 +310,78 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* Executive Search Section */}
       <section className="section section-dark">
         <div className="container">
           <SectionTitle
             title="Executive Search"
             subtitle="Building leadership teams with expertise in precious metals and mining sectors"
+            light={true}
           />
-
-          <div
-            className="card"
-            style={{
-              backgroundColor: "var(--bondze-white)",
-              border: "2px solid var(--bondze-gold)",
-              padding: "3rem",
-              marginTop: "3rem",
-            }}
-          >
-            <div
-              className="grid grid-2"
-              style={{ gap: "3rem", alignItems: "center" }}
-            >
+          <div className="card bg-white border-2 border-bondze-gold p-12 mt-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left - Image */}
               <div>
-                <div
-                  style={{
-                    borderRadius: "var(--radius-lg)",
-                    overflow: "hidden",
-                    border: "2px solid var(--bondze-gold)",
-                  }}
-                >
+                <div className="rounded-lg overflow-hidden border-2 border-bondze-gold">
                   <img
                     src="/executive.jpg"
                     alt="Executive Summary"
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      display: "block",
-                    }}
+                    className="w-full h-auto block"
                   />
                 </div>
               </div>
 
               {/* Right - Content */}
               <div>
-                <h3
-                  style={{
-                    fontSize: "1.75rem",
-                    fontWeight: "700",
-                    color: "var(--bondze-charcoal)",
-                    marginBottom: "2rem",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.5px",
-                  }}
-                >
+                <h3 className="text-3xl font-bold text-bondze-charcoal mb-8 uppercase tracking-wide">
                   Company Overview
                 </h3>
 
-                <div
-                  style={{
-                    backgroundColor: "var(--bondze-light)",
-                    borderLeft: "4px solid var(--bondze-gold)",
-                    padding: "1.5rem",
-                    marginBottom: "1.5rem",
-                    borderRadius: "0 8px 8px 0",
-                  }}
-                >
-                  <p
-                    style={{
-                      color: "var(--text-muted)",
-                      lineHeight: "1.8",
-                      margin: 0,
-                    }}
-                  >
-                    <strong style={{ color: "var(--bondze-charcoal)" }}>
-                      BONDZE PRECIOUS METALS AND MINERALS FZ-LLC
+                <div className="bg-gradient-to-r from-gray-50 to-white border-l-4 border-bondze-gold p-8 mb-6 rounded-r-lg shadow-sm">
+                  <p className="text-gray-700 leading-relaxed text-lg">
+                    <strong className="text-bondze-charcoal">
+                      BONDZE PRECIOUS METALS AND MINERAL TRADING LLC
                     </strong>{" "}
-                    is a UAE based mining and commodities company focused on
-                    building a scalable platform across Africa's most
-                    resource-rich regions.
+                    is a corporate platform operating across the precious metals
+                    value and minerals chain. Founded with a commitment to
+                    institutional discipline, we bridge African mining
+                    operations with      
                   </p>
                 </div>
 
-                <div
-                  style={{
-                    backgroundColor: "var(--bondze-light)",
-                    borderLeft: "4px solid var(--bondze-gold)",
-                    padding: "1.5rem",
-                    marginBottom: "1.5rem",
-                    borderRadius: "0 8px 8px 0",
-                  }}
-                >
-                  <p
-                    style={{
-                      color: "var(--text-muted)",
-                      lineHeight: "1.8",
-                      margin: 0,
-                    }}
-                  >
-                    The Company's core strategy is to acquire, develop, and
-                    operate gold mining assets while integrating downstream
-                    trading through Dubai.
+                <div className="bg-gradient-to-r from-gray-50 to-white border-l-4 border-bondze-gold p-8 mb-6 rounded-r-lg shadow-sm">
+                  <h4 className="font-semibold text-bondze-charcoal mb-3 text-lg">
+                    Our Operations
+                  </h4>
+                  <p className="text-gray-700 leading-relaxed text-lg">
+                    Our operations span mining development, gold and copper
+                    trading, and strategic partnerships that create value for
+                    all stakeholders. We operate with transparency, compliance,
+                    and a long-term vision for sustainable growth.
                   </p>
                 </div>
 
-                <div
-                  style={{
-                    backgroundColor: "var(--bondze-light)",
-                    borderLeft: "4px solid var(--bondze-gold)",
-                    padding: "1.5rem",
-                    marginBottom: "1.5rem",
-                    borderRadius: "0 8px 8px 0",
-                  }}
-                >
-                  <p
-                    style={{
-                      color: "var(--text-muted)",
-                      lineHeight: "1.8",
-                      margin: 0,
-                    }}
-                  >
-                    BONDZE operates with a disciplined, community-first entry
-                    approach securing early-stage access to mining opportunities
-                    and transitioning them into structured, licensed operations.
-                    The Company is currently advancing its gold project in
-                    Sierra Leone while building a broader pipeline across West
-                    and Central Africa.
-                  </p>
-                </div>
-
-                <div
-                  style={{
-                    backgroundColor: "var(--bondze-light)",
-                    borderLeft: "4px solid var(--bondze-gold)",
-                    padding: "1.5rem",
-                    borderRadius: "0 8px 8px 0",
-                  }}
-                >
-                  <p
-                    style={{
-                      color: "var(--text-muted)",
-                      lineHeight: "1.8",
-                      margin: 0,
-                    }}
-                  >
-                    BONDZE's long-term vision is to evolve into a diversified
-                    mining and commodities group with exposure to gold, copper,
-                    and bauxite, supported by integrated trading and processing
-                    capabilities.
+                <div className="bg-gradient-to-r from-gray-50 to-white border-l-4 border-bondze-gold p-8 mb-6 rounded-r-lg shadow-sm">
+                  <h4 className="font-semibold text-bondze-charcoal mb-3 text-lg">
+                    Strategic Focus
+                  </h4>
+                  <p className="text-gray-700 leading-relaxed text-lg">
+                    We focus on building a scalable platform across Africa's
+                    most resource-rich regions while maintaining the highest
+                    standards of corporate governance and operational
+                    excellence.
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div style={{ textAlign: "center", marginTop: "3rem" }}>
-            <NavLink to="/careers" className="btn btn-primary btn-lg">
-              Explore Opportunities{" "}
-              <ArrowRight size={18} style={{ marginLeft: "8px" }} />
+          <div className="text-center mt-12">
+            <NavLink
+              to="/careers"
+              className="btn btn-primary btn-lg inline-flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
+            >
+              Explore Opportunities <ArrowRight size={18} />
             </NavLink>
           </div>
         </div>
@@ -493,120 +390,84 @@ const Home = () => {
       {/* Geographic Focus Section */}
       <section className="section">
         <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Geographic Focus</h2>
-            <div className="divider-gold"></div>
-            <p className="section-description">
-              Strategic operations connecting African mining regions to global
-              markets
-            </p>
-          </div>
-          <div
-            className="grid grid-2"
-            style={{ maxWidth: "800px", margin: "0 auto" }}
-          >
-            <div style={{ textAlign: "center", padding: "2rem" }}>
-              <div
-                style={{
-                  fontSize: "3rem",
-                  fontWeight: "700",
-                  color: "var(--color-gold)",
-                  marginBottom: "1rem",
-                }}
-              >
+          <SectionTitle
+            title="Geographic Focus"
+            subtitle="Strategic operations connecting African mining regions to global markets"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto">
+            <div className="text-center p-8">
+              <div className="text-5xl font-bold text-bondze-gold mb-4">
                 Africa
               </div>
-              <p>West and Central African mining operations</p>
+              <p className="text-gray-600">
+                West and Central African mining operations
+              </p>
             </div>
-            <div style={{ textAlign: "center", padding: "2rem" }}>
-              <div
-                style={{
-                  fontSize: "3rem",
-                  fontWeight: "700",
-                  color: "var(--color-gold)",
-                  marginBottom: "1rem",
-                }}
-              >
+            <div className="text-center p-8">
+              <div className="text-5xl font-bold text-bondze-gold mb-4">
                 Dubai
               </div>
-              <p>Global headquarters and trading hub</p>
+              <p className="text-gray-600">
+                Global headquarters and trading hub
+              </p>
             </div>
           </div>
-          <div style={{ textAlign: "center", marginTop: "3rem" }}>
-            <NavLink to="/geography" className="btn btn-outline">
-              Explore Our Footprint{" "}
-              <ArrowRight size={18} style={{ marginLeft: "8px" }} />
+          <div className="text-center mt-12">
+            <NavLink
+              to="/geography"
+              className="btn btn-outline inline-flex items-center gap-2"
+            >
+              Explore Our Footprint <ArrowRight size={18} />
             </NavLink>
           </div>
         </div>
       </section>
-
       {/* Governance Section */}
       <section className="section section-light">
         <div className="container">
-          <div
-            className="grid grid-2"
-            style={{
-              alignItems: "center",
-              maxWidth: "1000px",
-              margin: "0 auto",
-            }}
-          >
-            <div>
-              <h2 className="section-title" style={{ textAlign: "left" }}>
-                Governance & Compliance
-              </h2>
-              <div className="divider-gold" style={{ margin: "1rem 0" }}></div>
-              <p
-                style={{
-                  fontSize: "1.125rem",
-                  lineHeight: "1.8",
-                  marginBottom: "2rem",
-                }}
-              >
-                We operate with the highest standards of corporate governance
-                and compliance. Our commitment to responsible sourcing, AML/CFT
-                protocols, and ethical business practices underpins every
-                transaction.
-              </p>
-              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.5rem",
-                  }}
-                >
-                  <ShieldCheck size={20} color="var(--color-gold)" />
-                  <span>Responsible Sourcing</span>
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.5rem",
-                  }}
-                >
-                  <ShieldCheck size={20} color="var(--color-gold)" />
-                  <span>AML/CFT Compliant</span>
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.5rem",
-                  }}
-                >
-                  <ShieldCheck size={20} color="var(--color-gold)" />
-                  <span>Board Oversight</span>
-                </div>
+          <SectionTitle
+            title="Governance & Compliance"
+            subtitle="We operate with the highest standards of corporate governance and compliance. Our commitment to responsible sourcing, AML/CFT protocols, and ethical business practices underpins every transaction."
+            light={false}
+          />
+          <div className="divider-gold my-4"></div>
+          {/* Centered Compliance Badges */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg border border-bondze-gold shadow-sm hover:shadow-lg transition-shadow duration-300">
+              <div className="w-12 h-12 bg-bondze-gold rounded-full flex items-center justify-center mb-4">
+                <ShieldCheck size={24} className="text-white" />
               </div>
+              <span className="font-semibold text-bondze-charcoal text-lg">
+                Responsible Sourcing
+              </span>
             </div>
-            <div style={{ textAlign: "center" }}>
-              <NavLink to="/governance" className="btn btn-secondary btn-lg">
-                Learn More
-              </NavLink>
+            <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg border border-bondze-gold shadow-sm hover:shadow-lg transition-shadow duration-300">
+              <div className="w-12 h-12 bg-bondze-gold rounded-full flex items-center justify-center mb-4">
+                <ShieldCheck size={24} className="text-white" />
+              </div>
+              <span className="font-semibold text-bondze-charcoal text-lg">
+                AML/CFT Compliant
+              </span>
             </div>
+            <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg border border-bondze-gold shadow-sm hover:shadow-lg transition-shadow duration-300">
+              <div className="w-12 h-12 bg-bondze-gold rounded-full flex items-center justify-center mb-4">
+                <ShieldCheck size={24} className="text-white" />
+              </div>
+              <span className="font-semibold text-bondze-charcoal text-lg">
+                Board Oversight
+              </span>
+            </div>
+          </div>
+
+          {/* Centered Button */}
+          <div className="text-center mt-12">
+            <NavLink
+              to="/governance"
+              className="btn btn-secondary btn-lg inline-flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
+            >
+              Learn More
+              <ArrowRight size={18} />
+            </NavLink>
           </div>
         </div>
       </section>
@@ -618,51 +479,56 @@ const Home = () => {
             title="Market Insight"
             subtitle="Reference metal market prices (LME indicative values)"
           />
-          <div className="table-container">
-            <table
-              className="table"
-              style={{ maxWidth: "800px", margin: "0 auto" }}
-            >
-              <thead>
-                <tr>
-                  <th>Metal</th>
-                  <th>Price</th>
-                  <th>Unit</th>
-                  <th>24h Change</th>
-                </tr>
-              </thead>
-              <tbody>
-                {marketData.map((item) => (
-                  <tr key={item.metal}>
-                    <td
-                      style={{ fontWeight: "600", color: "var(--text-dark)" }}
-                    >
-                      {item.metal}
-                    </td>
-                    <td>{item.price}</td>
-                    <td>{item.unit}</td>
-                    <td
-                      style={{
-                        color: item.change.startsWith("+")
-                          ? "var(--color-success)"
-                          : "var(--color-error)",
-                      }}
-                    >
-                      {item.change}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-bondze-gold">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="bg-bondze-blue text-white">
+                      <th className="px-6 py-4 text-left font-semibold">
+                        Metal
+                      </th>
+                      <th className="px-6 py-4 text-left font-semibold">
+                        Price
+                      </th>
+                      <th className="px-6 py-4 text-left font-semibold">
+                        Unit
+                      </th>
+                      <th className="px-6 py-4 text-left font-semibold">
+                        24h Change
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {marketData.map((item, index) => (
+                      <tr
+                        key={item.metal}
+                        className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}
+                      >
+                        <td className="px-6 py-4 font-semibold text-bondze-charcoal">
+                          {item.metal}
+                        </td>
+                        <td className="px-6 py-4 text-gray-700">
+                          {item.price}
+                        </td>
+                        <td className="px-6 py-4 text-gray-700">{item.unit}</td>
+                        <td
+                          className={`px-6 py-4 font-medium ${
+                            item.change.startsWith("+")
+                              ? "text-green-600"
+                              : "text-red-600"
+                          }`}
+                        >
+                          {item.change}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
-          <p
-            style={{
-              textAlign: "center",
-              fontSize: "0.875rem",
-              color: "var(--text-muted)",
-              marginTop: "1.5rem",
-            }}
-          >
+          <p className="text-center text-sm text-gray-600 mt-6">
             * Market data for reference only. Not for trading purposes. Actual
             prices may vary.
           </p>
@@ -676,49 +542,21 @@ const Home = () => {
             title="Why Choose BONDZE"
             subtitle="Our competitive advantages deliver superior value to partners and stakeholders"
           />
-          <div className="grid grid-2" style={{ gap: "2rem" }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {advantages.map((advantage, index) => (
-              <div key={index} className="card" style={{ padding: "2rem" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    gap: "1.5rem",
-                  }}
-                >
-                  <div
-                    style={{
-                      width: "64px",
-                      height: "64px",
-                      backgroundColor: "var(--color-gold)",
-                      borderRadius: "50%",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "var(--text-light)",
-                      flexShrink: 0,
-                    }}
-                  >
+              <div
+                key={index}
+                className="card p-8 hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 bg-bondze-gold rounded-full flex items-center justify-center text-white flex-shrink-0">
                     {advantage.icon}
                   </div>
                   <div>
-                    <h3
-                      style={{
-                        fontSize: "1.25rem",
-                        fontWeight: "600",
-                        marginBottom: "0.75rem",
-                        color: "var(--text-dark)",
-                      }}
-                    >
+                    <h3 className="text-xl font-semibold text-bondze-charcoal mb-3">
                       {advantage.title}
                     </h3>
-                    <p
-                      style={{
-                        color: "var(--text-muted)",
-                        lineHeight: "1.6",
-                        margin: 0,
-                      }}
-                    >
+                    <p className="text-gray-600 leading-relaxed">
                       {advantage.description}
                     </p>
                   </div>
@@ -726,10 +564,12 @@ const Home = () => {
               </div>
             ))}
           </div>
-          <div style={{ textAlign: "center", marginTop: "3rem" }}>
-            <NavLink to="/about" className="btn btn-primary btn-lg">
-              Learn More About Us{" "}
-              <ArrowRight size={18} style={{ marginLeft: "8px" }} />
+          <div className="text-center mt-12">
+            <NavLink
+              to="/about"
+              className="btn btn-primary btn-lg inline-flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
+            >
+              Learn More About Us <ArrowRight size={18} />
             </NavLink>
           </div>
         </div>
@@ -741,75 +581,39 @@ const Home = () => {
             title="Latest Insights"
             subtitle="Market analysis, company updates, and industry developments"
           />
-          <div className="grid grid-3" style={{ gap: "2rem" }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {newsInsights.map((insight, index) => (
-              <article key={index} className="card">
-                <div style={{ padding: "2rem" }}>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: "1rem",
-                    }}
-                  >
-                    <span
-                      style={{
-                        backgroundColor: "var(--color-gold)",
-                        color: "var(--text-light)",
-                        padding: "0.25rem 0.75rem",
-                        borderRadius: "var(--radius-full)",
-                        fontSize: "0.75rem",
-                        fontWeight: "600",
-                      }}
-                    >
-                      {insight.category}
-                    </span>
-                    <span
-                      style={{
-                        fontSize: "0.875rem",
-                        color: "var(--text-muted)",
-                      }}
-                    >
-                      {insight.date}
-                    </span>
-                  </div>
-                  <h3
-                    style={{
-                      fontSize: "1.125rem",
-                      fontWeight: "600",
-                      marginBottom: "0.75rem",
-                      color: "var(--text-dark)",
-                      lineHeight: "1.4",
-                    }}
-                  >
-                    {insight.title}
-                  </h3>
-                  <p
-                    style={{
-                      color: "var(--text-muted)",
-                      lineHeight: "1.6",
-                      marginBottom: "1.5rem",
-                    }}
-                  >
-                    {insight.excerpt}
-                  </p>
-                  <button
-                    className="btn btn-outline"
-                    style={{ width: "100%" }}
-                    onClick={() => console.log("Read more:", insight.title)}
-                  >
-                    Read More{" "}
-                    <ArrowRight size={16} style={{ marginLeft: "8px" }} />
-                  </button>
+              <article
+                key={index}
+                className="card p-8 hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <span className="bg-bondze-gold text-white py-1 px-3 rounded-full text-xs font-semibold">
+                    {insight.category}
+                  </span>
+                  <span className="text-sm text-gray-600">{insight.date}</span>
                 </div>
+                <h3 className="text-lg font-semibold text-bondze-charcoal mb-3 leading-tight">
+                  {insight.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  {insight.excerpt}
+                </p>
+                <button
+                  className="btn btn-outline w-full inline-flex items-center justify-center gap-2 hover:bg-bondze-blue hover:text-white hover:border-bondze-blue transition-colors duration-300"
+                  onClick={() => console.log("Read more:", insight.title)}
+                >
+                  Read More <ArrowRight size={16} />
+                </button>
               </article>
             ))}
           </div>
-          <div style={{ textAlign: "center", marginTop: "3rem" }}>
-            <NavLink to="/investors" className="btn btn-secondary">
-              View All Insights{" "}
-              <ArrowRight size={18} style={{ marginLeft: "8px" }} />
+          <div className="text-center mt-12">
+            <NavLink
+              to="/investors"
+              className="btn btn-secondary inline-flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
+            >
+              View All Insights <ArrowRight size={18} />
             </NavLink>
           </div>
         </div>
@@ -817,5 +621,4 @@ const Home = () => {
     </main>
   );
 };
-
 export default Home;
